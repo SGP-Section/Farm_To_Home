@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5sp"
+    android:background="@drawable/recycler_background"
+    android:orientation="vertical"
+    android:padding="4dp"
+    app:layout_constraintCircleRadius="10dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_buyer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10sp"
+            android:text="Buyer Name:"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/value_buyer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Charmi Patel"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_buyer_phno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10sp"
+            android:text="Buyer Phone No: "
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/value_buyer_phno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:text="987654321"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_crop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10sp"
+            android:text="Crop:"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/value_crop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Tomato"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10sp"
+            android:text="Price: Rs."
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/value_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:text="20.00"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/txt_11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:text="/-"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/value_no_of_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10sp"
+            android:text="No "
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" X 1Q("
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/value_amount_1Q"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00kg"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=")"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="="
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/value_total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00kg"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10sp"
+            android:text="Area: "
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/value_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:text="Ankleshwar"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_date_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10sp"
+            android:text="Date: "
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/value_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:text="28-09-2020"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>
+
+    <!--    Buyer-Name/Phno
+        Crop
+        Quantity
+        Weight in 1Q
+        Area(City,State)-->

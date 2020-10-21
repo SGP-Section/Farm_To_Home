@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    tools:context=".Sell_Activity">
+
+    <TextView
+        android:id="@+id/txt_toSell"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/coustard"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="CONFIRM SELLING DETAILS"
+        android:textColor="@color/BuyerTextColour"
+        android:textSize="25dp" />
+
+    <View
+        android:id="@+id/View_1"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@+id/txt_toSell"
+        android:layout_marginBottom="15dp"
+        android:background="#39501E" />
+
+
+    <TextView
+        android:id="@+id/txt_cropNameSell"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/View_1"
+        android:layout_marginTop="2dp"
+        android:paddingStart="10sp"
+        android:paddingTop="8sp"
+        android:text="Name of crop: "
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_cropValue"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/View_1"
+
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/txt_cropNameSell"
+        android:paddingStart="10sp"
+        android:paddingTop="8sp"
+        android:text="Crop"
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_areaSell"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_cropValue"
+        android:layout_marginTop="1dp"
+        android:paddingStart="10sp"
+        android:paddingTop="8sp"
+        android:text="Preferred Area: "
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_areaSellValue"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_cropValue"
+        android:layout_marginStart="7dp"
+        android:layout_toEndOf="@+id/txt_areaSell"
+        android:paddingStart="10sp"
+        android:paddingTop="8dp"
+        android:text="Preferred Area"
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_weightSell"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_areaSellValue"
+
+        android:layout_marginTop="2dp"
+        android:paddingStart="10sp"
+        android:paddingTop="8sp"
+        android:text="Weight per 1 Quantity: "
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_weightSellValue"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_areaSellValue"
+
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/txt_weightSell"
+        android:paddingStart="10sp"
+        android:paddingTop="8sp"
+        android:text="Weight"
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_QuantitySell"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_weightSell"
+
+        android:paddingStart="10sp"
+        android:paddingTop="8sp"
+        android:text="Quantity Of Item: "
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_QuantitySellValue"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_weightSell"
+
+        android:layout_toEndOf="@+id/txt_QuantitySell"
+        android:paddingStart="10sp"
+        android:paddingTop="8sp"
+        android:text="Quantity"
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_TotalWeightSell"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_QuantitySell"
+
+        android:paddingStart="10sp"
+        android:paddingTop="8sp"
+        android:text="Total Weight: "
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_TotalWeightSellValue"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_QuantitySell"
+
+        android:layout_toEndOf="@+id/txt_TotalWeightSell"
+        android:paddingStart="10sp"
+        android:paddingTop="8sp"
+        android:text="TotalWeight"
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_priceSell"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_TotalWeightSell"
+
+        android:paddingStart="10sp"
+        android:paddingTop="8sp"
+        android:text="Price per 1 Quantity: "
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_priceSellValue"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_TotalWeightSell"
+
+        android:layout_toEndOf="@+id/txt_priceSell"
+        android:paddingStart="10sp"
+        android:paddingTop="8sp"
+        android:text="Price"
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_TotalPriceSell"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_priceSell"
+
+        android:paddingStart="10sp"
+        android:paddingTop="8sp"
+        android:text="Total Price: "
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_TotalPriceSellValue"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_priceSell"
+
+        android:layout_toEndOf="@+id/txt_TotalPriceSell"
+        android:paddingStart="10sp"
+        android:paddingTop="8sp"
+        android:text="TotalWeight"
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_TotalPriceSell"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_alignParentLeft="true"
+        android:hint="BACK"
+        android:background="@color/ButtonBackground"
+        android:paddingHorizontal="20dp"
+        android:textColorHint="@color/Fontbkg"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_TotalPriceSell"
+        android:layout_marginTop="20dp"
+        android:background="@color/ButtonBackground"
+        android:layout_marginEnd="20dp"
+        android:layout_toEndOf="@+id/btn_back"
+        android:layout_alignParentRight="true"
+        android:hint="CONFIRM"
+        android:paddingHorizontal="20dp"
+        android:textColorHint="@color/Fontbkg"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/btn_reorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_back"
+        android:background="@color/ButtonBackground"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="CONFIRM &amp; \nPlace Another Order"
+        android:paddingHorizontal="20dp"
+        android:textColorHint="@color/Fontbkg"
+        android:textSize="25sp" />
+
+</RelativeLayout>

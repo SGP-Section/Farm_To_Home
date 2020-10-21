@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".createAccount"
+    android:backgroundTint="#A6FFFFFF"
+    android:backgroundTintMode="multiply"
+    android:orientation="vertical"
+    android:background="@drawable/login_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/createAccTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearlayout"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="50dp"
+            android:fontFamily="@font/coustard"
+            android:text="Login"
+            android:textAlignment="center"
+            android:textColor="#05950B"
+            android:textSize="45sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/button_background" />
+
+            <EditText
+                android:id="@+id/edt_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/button_background"
+                android:digits="0123456789"
+                android:fontFamily="sans-serif"
+                android:hint="Enter Mobile Number"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:paddingStart="10dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="150dp"
+            android:background="#95C86A"
+            android:fontFamily="@font/coustard"
+            android:padding="10dp"
+            android:text="Send OTP"
+            android:textAllCaps="false"
+            android:textSize="35dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

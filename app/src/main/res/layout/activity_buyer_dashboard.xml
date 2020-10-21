@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/back"
+    tools:context=".buyer_dashboard">
+
+    <Button
+        android:id="@+id/btn_ProceedToBuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@color/ButtonBackground"
+        android:fontFamily="@font/coustard"
+        android:paddingHorizontal="20sp"
+        android:text="Proceed to buy"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="30dp"
+        android:background="#575757" />
+
+    <TextView
+        android:id="@+id/txt_PendingCrops"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/coustard"
+        android:background="#ADE8FFCD"
+        android:text="Pending Crops"
+        android:textColor="#352F2F"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#ADE8FFCD"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:text="Pending Orders :-"
+            android:textSize="25sp"
+            android:textColor="#686868"
+            android:paddingTop="2sp"
+            android:paddingBottom="2sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/txt_PendingOrderNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:text="2222"
+            android:textColor="#6A6A6A"
+            android:textSize="25sp"
+            android:paddingTop="2sp"
+            android:paddingBottom="2sp"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#39501F" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_pendingCrops"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:background="#FFFFFF"
+            android:scrollbars="vertical"
+           />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

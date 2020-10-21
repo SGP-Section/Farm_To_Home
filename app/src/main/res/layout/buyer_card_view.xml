@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/BuyerCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5sp"
+    app:cardCornerRadius="4sp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0sp"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/txt_s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10sp"
+            android:text="Seller Name:"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_sellerName_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/txt_s"
+            android:paddingStart="4sp"
+            android:text="Patel"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_sphno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_s"
+            android:layout_marginTop="0dp"
+            android:paddingStart="10sp"
+            android:text="Seller Phone No:"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_sellerPhno_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_sellerName_value"
+            android:layout_toEndOf="@+id/txt_sphno"
+            android:paddingStart="4sp"
+            android:text="+911234567890"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_sphno"
+            android:paddingStart="10sp"
+            android:text="Crop: "
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_crop_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_sphno"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/txt_c"
+            android:paddingStart="2sp"
+            android:text="Tomato"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_Quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_c"
+            android:paddingStart="10sp"
+            android:text="Available Quantity: "
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_quantity_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_c"
+            android:layout_marginStart="4sp"
+            android:layout_toEndOf="@+id/txt_Quantity"
+            android:paddingStart="2sp"
+            android:text="20 KG"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_Quantity"
+            android:paddingStart="10sp"
+            android:text="Weight per 1-KG: "
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_weight_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_Quantity"
+            android:layout_marginStart="4sp"
+            android:layout_toEndOf="@+id/txt_weight"
+            android:paddingStart="2sp"
+            android:text="20 Rs."
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_Area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_weight"
+            android:paddingStart="10sp"
+            android:text="Area: "
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_area_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_weight"
+            android:layout_marginStart="4sp"
+            android:layout_toEndOf="@+id/txt_Area"
+            android:paddingStart="2sp"
+            android:text="Anywhere"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/To_Buy_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_weight"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_baseline_arrow_forward_24" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

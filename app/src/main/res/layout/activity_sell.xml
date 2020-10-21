@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    tools:context=".Sell_Activity">
+
+    <TextView
+        android:id="@+id/txt_toSell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/coustard"
+        android:gravity="center"
+        android:paddingTop="30dp"
+        android:text="TO SELL"
+        android:textSize="30sp"
+        android:textColor="@color/BuyerTextColour"
+        android:textStyle="bold" />
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@+id/txt_toSell"
+        android:background="#3A511F" />
+
+    <View
+        android:id="@+id/spacing"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/txt_toSell" />
+
+    <TextView
+        android:id="@+id/txt_cropNameSell"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/spacing"
+        android:layout_marginTop="2dp"
+        android:paddingStart="10sp"
+
+        android:paddingTop="8sp"
+        android:text="Name of Crop :"
+        android:textColor="@color/Fontbkg"
+
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edt_cropName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/spacing"
+        android:layout_marginRight="30dp"
+        android:scrollY="30dp"
+        android:layout_toEndOf="@+id/txt_cropNameSell"
+        android:hint="Enter Crop Name"
+
+        android:inputType="text"
+        android:textColor="@color/Fontbkg" />
+
+    <TextView
+        android:id="@+id/txt_areaSell"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_cropNameSell"
+        android:layout_marginTop="2dp"
+
+        android:paddingStart="10sp"
+        android:text="Preferred Area: "
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edt_PreferredArea"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_cropNameSell"
+
+        android:layout_marginRight="30dp"
+        android:layout_toEndOf="@+id/txt_areaSell"
+
+        android:hint="Enter Preferred Area"
+        android:inputType="text"
+        android:textColor="@color/Fontbkg" />
+
+    <TextView
+        android:id="@+id/txt_weightSell"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/edt_PreferredArea"
+        android:layout_marginTop="2dp"
+        android:paddingStart="10sp"
+
+        android:text="Weight of 1 Quantity: "
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/spinner_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/edt_PreferredArea"
+
+        android:layout_toEndOf="@+id/txt_weightSell"
+        android:textColor="@color/Fontbkg" />
+
+    <TextView
+        android:id="@+id/txt_QuantitySell"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_weightSell"
+        android:paddingStart="10sp"
+
+        android:paddingTop="8sp"
+        android:text="Quantity Of Item: "
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edt_quantityValue"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_weightSell"
+        android:layout_toEndOf="@+id/txt_QuantitySell"
+        android:hint="00"
+        android:inputType="number"
+        android:textColor="@color/Fontbkg" />
+
+    <TextView
+        android:id="@+id/txt_priceSell"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_QuantitySell"
+        android:paddingStart="10sp"
+        android:paddingTop="8sp"
+        android:text="Price of 1 Quantity: ₹"
+
+        android:textColor="@color/Fontbkg"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edt_price"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txt_QuantitySell"
+        android:layout_toEndOf="@+id/txt_priceSell"
+        android:hint="Enter Price"
+        android:inputType="number"
+
+        android:textColor="@color/Fontbkg" />
+
+    <Button
+        android:id="@+id/btn_proceedSell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_priceSell"
+        android:layout_marginHorizontal="100sp"
+        android:background="@color/ButtonBackground"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="245dp"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:text="PROCEED"
+        android:textSize="25sp" />
+
+</RelativeLayout>
