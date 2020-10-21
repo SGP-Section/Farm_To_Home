@@ -2,10 +2,14 @@ package com.example.sgp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,43 +30,21 @@ import java.util.ArrayList;
 
 
 public class BuyerSearchActivity extends AppCompatActivity {
-    static private ArrayList<Database_Class> mainCardList_Value;
-    static private ArrayList<String> mainCardList_Key;
-
-    static {
-
-    }
-
+      static ArrayList<Database_Class> mainCardList_Value;
+      static ArrayList<String> mainCardList_Key;
     private BuyerSearch_adapter data_adapter;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
+    EditText Search_edtxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buyer_search);
-        fillCardList();
-
-    }
-
-
-    private void setupRecyclerView() {
-        recyclerView = findViewById(R.id.recyclerview_buyerSearch);
-        recyclerView.setHasFixedSize(true);
-        data_adapter = new BuyerSearch_adapter(BuyerSearchActivity.this, mainCardList_Value, mainCardList_Key);
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setAdapter(data_adapter);
-        recyclerView.setLayoutManager(layoutManager);
-
-    }
-
-    private void fillCardList() {
+        Search_edtxt=findViewById(R.id.buyer_search_editTXT);
         mainCardList_Value = new ArrayList<>(0);
         mainCardList_Key = new ArrayList<>(0);
 
-       /* for (int i = 0; i < 15; i++) {
-            mainCardList.add(new Database_Class("Seller "+i,"987654321","Lemon","30.00","3","5","Maninagar","28/09/2020"));
-        }*/
         FirebaseDatabase.getInstance().getReference("Main Stock/Orders")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
@@ -82,13 +64,68 @@ public class BuyerSearchActivity extends AppCompatActivity {
 
                     }
                 });
-        setupRecyclerView();
-//        recyclerView = findViewById(R.id.recyclerview_buyerSearch);
-//        recyclerView.setHasFixedSize(true);
-//        data_adapter = new BuyerSearch_adapter(BuyerSearchActivity.this, mainCardList_Value, mainCardList_Key);
-//        layoutManager = new LinearLayoutManager(this);
-//        recyclerView.setAdapter(data_adapter);
-//        recyclerView.setLayoutManager(layoutManager);
+        recyclerView = findViewById(R.id.recyclerview_buyerSearch);
+        recyclerView.setAdapter(new BuyerSearch_adapter(BuyerSearchActivity.this, mainCardList_Value, mainCardList_Key));
+        recyclerView.setLayoutManager(new LinearLayoutManager(BuyerSearchActivity.this));
+        Search_edtxt.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                customFilter(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+    }
+
+
+    private void setupRecyclerView() {
+        recyclerView = findViewById(R.id.recyclerview_buyerSearch);
+        recyclerView.setHasFixedSize(true);
+        data_adapter = new BuyerSearch_adapter(BuyerSearchActivity.this, mainCardList_Value, mainCardList_Key);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setAdapter(data_adapter);
+        recyclerView.setLayoutManager(layoutManager);
+
+    }
+
+    private void fillCardList() {
+        mainCardList_Value = new ArrayList<>(0);
+        mainCardList_Key = new ArrayList<>(0);
+
+        FirebaseDatabase.getInstance().getReference("Main Stock/Orders")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot dsnap : snapshot.getChildren()) {
+                            Database_Class S = dsnap.getValue(Database_Class.class);
+                            mainCardList_Value.add(S);
+                            mainCardList_Key.add(dsnap.getKey());
+                            Log.d("Tag", dsnap.getKey() + "key: Search");
+
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+        recyclerView = findViewById(R.id.recyclerview_buyerSearch);
+        recyclerView.setAdapter(new BuyerSearch_adapter(BuyerSearchActivity.this, mainCardList_Value, mainCardList_Key));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // recyclerView.setHasFixedSize(true);
+
     }
 
 
@@ -126,8 +163,10 @@ public class BuyerSearchActivity extends AppCompatActivity {
 
         menu.setQwertyMode(true);
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.search_menu, menu);
-        MenuItem menuItem = menu.findItem(R.id.search_icon);
+        menuInflater.inflate(R.menu.iconmenu, menu);
+        return true;
+
+       /* MenuItem menuItem = menu.findItem(R.id.search_icon);
         SearchView searchView = (SearchView) menuItem.getActionView();
         searchView.onActionViewExpanded();
         searchView.setFocusable(true);
@@ -147,7 +186,6 @@ public class BuyerSearchActivity extends AppCompatActivity {
             }
         });
 
-/*
         SearchView searchView = (SearchView) menuItem.getActionView();
         searchView.onActionViewExpanded();
         searchView.setQueryHint("Search.....");
@@ -168,7 +206,6 @@ public class BuyerSearchActivity extends AppCompatActivity {
 
         });
 */
-        return true;
     }
 
 
@@ -179,7 +216,7 @@ public class BuyerSearchActivity extends AppCompatActivity {
             if (data.mCropNameValue.toLowerCase().contains(s.toLowerCase())) {
                 temp_Value.add(data);
                 temp_Keys.add(mainCardList_Key.get(mainCardList_Value.indexOf(data)));
-                Log.d("Tag", temp_Keys + " : " + temp_Value);
+                Log.d("Tag", temp_Keys + " Temp : " + temp_Value);
             }
         }
         recyclerView = findViewById(R.id.recyclerview_buyerSearch);
