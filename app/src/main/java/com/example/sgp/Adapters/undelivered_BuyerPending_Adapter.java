@@ -3,6 +3,7 @@ package com.example.sgp.Adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -51,6 +52,9 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
             holder.name_txt.setText("Seller Name:");
             holder.phno_txt.setText("Seller Phone No:");
         }
+        else {
+            holder.CANCEL.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
@@ -60,7 +64,7 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
 
     public class undelivered_ViewHolder extends RecyclerView.ViewHolder {
         TextView bName, bPhno, cropName, Price, Quantity, Weight_perItem, Total_Quantity, Area, name_txt, phno_txt;
-
+        Button CANCEL;
         public undelivered_ViewHolder(@NonNull View itemView) {
             super(itemView);
             bName = itemView.findViewById(R.id.value_buyer_name_undel);
@@ -73,6 +77,9 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
             Area = itemView.findViewById(R.id.value_area_undel);
             name_txt = itemView.findViewById(R.id.txt_buyer_name);
             phno_txt = itemView.findViewById(R.id.txt_buyer_phno);
+
+            CANCEL=itemView.findViewById(R.id.btn_cancel_undeli_pending);
+
 
 
         }

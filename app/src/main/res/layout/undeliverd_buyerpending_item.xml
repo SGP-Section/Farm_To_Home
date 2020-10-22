@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5sp"
@@ -52,10 +53,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="5dp"
-            android:text="987654321"
+            android:text="9876543210"
             android:textColor="#151515"
             android:textSize="20sp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -102,6 +104,7 @@
             android:text="20.00"
             android:textColor="#151515"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/txt_11"
             android:layout_width="wrap_content"
@@ -170,29 +173,55 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txt_area"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="10sp"
-            android:text="Area: "
-            android:textColor="#151515"
-            android:textSize="20sp" />
+            android:orientation="horizontal"
+            android:paddingRight="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/value_area_undel"
+            <TextView
+                android:id="@+id/txt_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10sp"
+                android:text="Area: "
+                android:textColor="#151515"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/value_area_undel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:text="Ankleshwar"
+                android:textColor="#151515"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_cancel_undeli_pending"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="5dp"
-            android:text="Ankleshwar"
-            android:textColor="#151515"
-            android:textSize="20sp" />
-    </LinearLayout>
+            android:layout_marginEnd="20dp"
+            android:background="@color/cancel"
+            android:fontFamily="@font/coustard"
+
+            android:text="Cancel"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </LinearLayout>
 

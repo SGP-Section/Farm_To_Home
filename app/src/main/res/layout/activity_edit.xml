@@ -11,8 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/coustard"
-        android:text="Edit Details"
+        android:textColor="@color/BuyerTextColour"
         android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:text="Edit Account Details"
         android:textSize="36sp" />
 
     <View
@@ -114,8 +116,7 @@
         android:layout_height="54dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:background="#AD8CB35F"
-        android:paddingLeft="10dp"
+        android:background="@color/ButtonBackground"
         android:text="update"
         android:textSize="20dp" />
 </LinearLayout>

@@ -7,4 +7,5 @@
     <color name="BuyerBackgroundColour">#A5E658</color>
     <color name="Fontbkg">#151515</color>
     <color name="back">#45FFFFFF</color>
+    <color name="cancel">#E8FF0000</color>
 </resources>
