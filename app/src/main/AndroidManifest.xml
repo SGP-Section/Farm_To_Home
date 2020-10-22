@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme_Custom">
         <activity
-            android:name=".EditActivity" />
+            android:name=".EditActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AccountActivity"
             android:screenOrientation="portrait" />
