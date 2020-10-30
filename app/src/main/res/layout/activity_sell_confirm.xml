@@ -36,7 +36,7 @@
         android:paddingStart="10sp"
         android:paddingTop="8sp"
         android:text="Name of crop: "
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <TextView
@@ -50,7 +50,7 @@
         android:paddingStart="10sp"
         android:paddingTop="8sp"
         android:text="Crop"
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <TextView
@@ -62,7 +62,7 @@
         android:paddingStart="10sp"
         android:paddingTop="8sp"
         android:text="Preferred Area: "
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <TextView
@@ -75,7 +75,7 @@
         android:paddingStart="10sp"
         android:paddingTop="8dp"
         android:text="Preferred Area"
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <TextView
@@ -88,7 +88,7 @@
         android:paddingStart="10sp"
         android:paddingTop="8sp"
         android:text="Weight per 1 Quantity: "
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <TextView
@@ -102,7 +102,7 @@
         android:paddingStart="10sp"
         android:paddingTop="8sp"
         android:text="Weight"
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <TextView
@@ -114,7 +114,7 @@
         android:paddingStart="10sp"
         android:paddingTop="8sp"
         android:text="Quantity Of Item: "
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <TextView
@@ -127,7 +127,7 @@
         android:paddingStart="10sp"
         android:paddingTop="8sp"
         android:text="Quantity"
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <TextView
@@ -139,7 +139,7 @@
         android:paddingStart="10sp"
         android:paddingTop="8sp"
         android:text="Total Weight: "
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <TextView
@@ -152,7 +152,7 @@
         android:paddingStart="10sp"
         android:paddingTop="8sp"
         android:text="TotalWeight"
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <TextView
@@ -164,7 +164,7 @@
         android:paddingStart="10sp"
         android:paddingTop="8sp"
         android:text="Price per 1 Quantity: "
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <TextView
@@ -177,7 +177,7 @@
         android:paddingStart="10sp"
         android:paddingTop="8sp"
         android:text="Price"
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <TextView
@@ -189,7 +189,7 @@
         android:paddingStart="10sp"
         android:paddingTop="8sp"
         android:text="Total Price: "
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <TextView
@@ -202,7 +202,7 @@
         android:paddingStart="10sp"
         android:paddingTop="8sp"
         android:text="TotalWeight"
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <Button
@@ -217,7 +217,7 @@
         android:hint="BACK"
         android:background="@color/ButtonBackground"
         android:paddingHorizontal="20dp"
-        android:textColorHint="@color/Fontbkg"
+        android:textColorHint="@color/Main_FontColor"
         android:textSize="25sp" />
 
     <Button
@@ -232,7 +232,7 @@
         android:layout_alignParentRight="true"
         android:hint="CONFIRM"
         android:paddingHorizontal="20dp"
-        android:textColorHint="@color/Fontbkg"
+        android:textColorHint="@color/Main_FontColor"
         android:textSize="25sp" />
 
     <Button
@@ -246,7 +246,7 @@
         android:layout_marginEnd="20dp"
         android:hint="CONFIRM &amp; \nPlace Another Order"
         android:paddingHorizontal="20dp"
-        android:textColorHint="@color/Fontbkg"
+        android:textColorHint="@color/Main_FontColor"
         android:textSize="25sp" />
 
 </RelativeLayout>

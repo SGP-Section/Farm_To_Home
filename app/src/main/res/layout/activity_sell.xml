@@ -42,7 +42,7 @@
 
         android:paddingTop="8sp"
         android:text="Name of Crop :"
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
 
         android:textSize="20sp" />
 
@@ -57,7 +57,7 @@
         android:hint="Enter Crop Name"
 
         android:inputType="text"
-        android:textColor="@color/Fontbkg" />
+        android:textColor="@color/Main_FontColor" />
 
     <TextView
         android:id="@+id/txt_areaSell"
@@ -68,7 +68,7 @@
 
         android:paddingStart="10sp"
         android:text="Preferred Area: "
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <EditText
@@ -82,7 +82,7 @@
 
         android:hint="Enter Preferred Area"
         android:inputType="text"
-        android:textColor="@color/Fontbkg" />
+        android:textColor="@color/Main_FontColor" />
 
     <TextView
         android:id="@+id/txt_weightSell"
@@ -93,7 +93,7 @@
         android:paddingStart="10sp"
 
         android:text="Weight of 1 Quantity: "
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <Spinner
@@ -103,7 +103,7 @@
         android:layout_below="@+id/edt_PreferredArea"
 
         android:layout_toEndOf="@+id/txt_weightSell"
-        android:textColor="@color/Fontbkg" />
+        android:textColor="@color/Main_FontColor" />
 
     <TextView
         android:id="@+id/txt_QuantitySell"
@@ -114,7 +114,7 @@
 
         android:paddingTop="8sp"
         android:text="Quantity Of Item: "
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <EditText
@@ -125,7 +125,7 @@
         android:layout_toEndOf="@+id/txt_QuantitySell"
         android:hint="00"
         android:inputType="number"
-        android:textColor="@color/Fontbkg" />
+        android:textColor="@color/Main_FontColor" />
 
     <TextView
         android:id="@+id/txt_priceSell"
@@ -136,7 +136,7 @@
         android:paddingTop="8sp"
         android:text="Price of 1 Quantity: ₹"
 
-        android:textColor="@color/Fontbkg"
+        android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
 
     <EditText
@@ -148,7 +148,7 @@
         android:hint="Enter Price"
         android:inputType="number"
 
-        android:textColor="@color/Fontbkg" />
+        android:textColor="@color/Main_FontColor" />
 
     <Button
         android:id="@+id/btn_proceedSell"

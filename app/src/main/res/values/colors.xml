@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#0E9164</color>
-    <color name="ButtonBackground">#71A33D</color>
+    <color name="ButtonBackground">#8BC34A</color>
     <color name="colorTextBackground">#CEFFFAE8</color>
     <color name="BuyerTextColour">#487025</color>
+    <color name="Sold_progressBar">#039BE5</color>
     <color name="BuyerBackgroundColour">#A5E658</color>
-    <color name="Fontbkg">#151515</color>
+    <color name="Main_FontColor">#151515</color>
+    <color name="Sub_FontColor">#575757</color>
+    <color name="BLACK">#000000</color>
     <color name="back">#45FFFFFF</color>
     <color name="cancel">#E8FF0000</color>
+    <color name="Undel_progressBar">#FB8C00</color>
+    <color name="RecyclerBKG">#80DAFFB0</color>
 </resources>

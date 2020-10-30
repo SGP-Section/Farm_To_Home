@@ -38,7 +38,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Seller_Dashboard"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompat_Custom"/>
         <activity
             android:name=".BuyerSearchActivity"
             android:screenOrientation="portrait" />

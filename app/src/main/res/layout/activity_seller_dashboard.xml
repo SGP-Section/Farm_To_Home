@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
     android:background="@color/back"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".Seller_Dashboard">
 
@@ -30,19 +30,20 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="8dp"
         android:layout_marginTop="20dp"
+        android:background="@color/RecyclerBKG"
         android:fontFamily="@font/coustard"
+        android:paddingStart="8dp"
         android:text="Sold"
-        android:background="#45DAFFB0"
-        android:textColor="#2C2C2C"
+        android:textColor="@color/Main_FontColor"
         android:textSize="30sp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#45DAFFB0">
+        android:background="@color/RecyclerBKG"
+        android:orientation="horizontal">
+
         <TextView
             android:id="@+id/sold_kg"
             android:layout_width="wrap_content"
@@ -51,7 +52,7 @@
             android:fontFamily="@font/coustard"
             android:paddingLeft="4dp"
             android:text="00.000"
-            android:textColor="#575757"
+            android:textColor="@color/Sub_FontColor"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +66,7 @@
             android:fontFamily="@font/coustard"
             android:paddingLeft="4dp"
             android:text="kg"
-            android:textColor="#575757"
+            android:textColor="@color/Sub_FontColor"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/sold_kg"
@@ -79,7 +80,7 @@
             android:layout_marginStart="8dp"
             android:fontFamily="@font/coustard"
             android:text="(00.00%)"
-            android:textColor="#575757"
+            android:textColor="@color/Sub_FontColor"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView4"
@@ -99,33 +100,35 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ProgressBar
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:id="@+id/sold_progBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="10dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="60dp"
-            android:background="@drawable/progress_bar_format"
+            android:progress="0"
+            android:progressTint="@color/Sold_progressBar"
             app:layout_constraintTop_toBottomOf="@+id/sold_percentage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="8dp"
         android:layout_marginTop="20dp"
+        android:background="@color/RecyclerBKG"
         android:fontFamily="@font/coustard"
         android:gravity="left"
+        android:paddingStart="8dp"
         android:text="Undelivered"
-        android:background="#45DAFFB0"
-        android:textColor="#2C2C2C"
+        android:textColor="@color/Main_FontColor"
         android:textSize="30dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#45DAFFB0">
+        android:background="@color/RecyclerBKG"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/not_sold_kg"
@@ -135,7 +138,7 @@
             android:fontFamily="@font/coustard"
             android:paddingLeft="4dp"
             android:text="00.000"
-            android:textColor="#575757"
+            android:textColor="@color/Sub_FontColor"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -149,7 +152,7 @@
             android:fontFamily="@font/coustard"
             android:paddingLeft="4dp"
             android:text="kg"
-            android:textColor="#575757"
+            android:textColor="@color/Sub_FontColor"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/not_sold_kg"
@@ -163,7 +166,7 @@
             android:layout_marginStart="8dp"
             android:fontFamily="@font/coustard"
             android:text="(00.00%)"
-            android:textColor="#575757"
+            android:textColor="@color/Sub_FontColor"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView3"
@@ -185,33 +188,35 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <ProgressBar
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:id="@+id/undel_progBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="10dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="60dp"
-            android:background="@drawable/progress_bar_format"
+            android:progress="50"
+            android:progressTint="@color/Undel_progressBar"
             app:layout_constraintTop_toBottomOf="@+id/not_sold_percentage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="8dp"
         android:layout_marginTop="20dp"
+        android:background="@color/RecyclerBKG"
         android:fontFamily="@font/coustard"
         android:gravity="left"
+        android:paddingStart="8dp"
         android:text="Cancelled"
-        android:background="#45DAFFB0"
-        android:textColor="#2C2C2C"
+        android:textColor="@color/Main_FontColor"
         android:textSize="30dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#45DAFFB0">
+        android:background="@color/RecyclerBKG"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/textView2"
@@ -221,7 +226,7 @@
             android:fontFamily="@font/coustard"
             android:paddingLeft="4dp"
             android:text="kg"
-            android:textColor="#575757"
+            android:textColor="@color/Sub_FontColor"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/canelled_kg"
@@ -236,7 +241,7 @@
             android:fontFamily="@font/coustard"
             android:paddingLeft="4dp"
             android:text="00.000"
-            android:textColor="#575757"
+            android:textColor="@color/Sub_FontColor"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -251,7 +256,7 @@
             android:fontFamily="@font/coustard"
             android:gravity="center"
             android:text="No Of Orders:"
-            android:textColor="#575757"
+            android:textColor="@color/Sub_FontColor"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView2"
@@ -259,7 +264,7 @@
             app:layout_constraintVertical_bias="0.521" />
 
         <TextView
-            android:id="@+id/canelled_percentage"
+            android:id="@+id/canelled_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/coustard"
@@ -267,6 +272,7 @@
             android:text="00"
             android:textColor="@color/BuyerTextColour"
             android:textSize="20dp"
+            android:paddingLeft="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -283,7 +289,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/canelled_percentage"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 

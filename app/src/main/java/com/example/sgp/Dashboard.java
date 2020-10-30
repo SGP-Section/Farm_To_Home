@@ -55,17 +55,17 @@ public class Dashboard extends AppCompatActivity {
     private void LoadData(){
         String MobileNo=FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
         DatabaseReference dref= FirebaseDatabase.getInstance().getReference("Data/"+MobileNo);
-        dref.addValueEventListener(new ValueEventListener() {
+        /*dref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dsnap:snapshot.getChildren())
-                    Log.d("Tag",dsnap.getValue().toString());
+                   Log.d("Tag",dsnap.getValue().toString());
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });
+        });*/
         dref= FirebaseDatabase.getInstance().getReference("Main Stock");
         dref.addValueEventListener(new ValueEventListener() {
             @Override
