@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/back"
     android:orientation="vertical"
-    tools:context=".BuyActivity">
+    tools:context=".Buyer_Section.BuyActivity">
 
     <TextView
         android:layout_width="match_parent"

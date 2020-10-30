@@ -10,52 +10,56 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme_Custom">
         <activity
-            android:name=".EditActivity"
-            android:screenOrientation="portrait" />
+            android:name=".OptionMenu.EditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
         <activity
-            android:name=".AccountActivity"
-            android:screenOrientation="portrait" />
+            android:name=".OptionMenu.AccountActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
         <activity
-            android:name=".BuyActivity"
+            android:name=".Buyer_Section.BuyActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Sell_Confirm"
+            android:name=".Seller_Section.Sell_Confirm"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Sell_Activity"
+            android:name=".Seller_Section.Sell_Activity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Seller_Statistics_Activity"
+            android:name=".Seller_Section.Seller_Statistics_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Manage_Stock_Activity"
+            android:name=".Seller_Section.Manage_Stock_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".buyer_dashboard"
+            android:name=".Buyer_Section.buyer_dashboard"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Seller_Dashboard"
+            android:name=".Seller_Section.Seller_Dashboard"
             android:screenOrientation="portrait"
             android:theme="@style/AppCompat_Custom"/>
         <activity
-            android:name=".BuyerSearchActivity"
+            android:name=".Buyer_Section.BuyerSearchActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Dashboard"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ApplicantDetails"
+            android:name=".Login_CreateAcc_Section.ApplicantDetails"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".createAccount"
+            android:name=".Login_CreateAcc_Section.createAccount"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Register"
+            android:name=".Login_CreateAcc_Section.Register"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity

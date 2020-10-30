@@ -1,4 +1,4 @@
-package com.example.sgp;
+package com.example.sgp.Buyer_Section;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,18 +8,20 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sgp.Adapters.BuyerSearch_adapter;
 import com.example.sgp.Adapters.Database_Class;
+import com.example.sgp.Dashboard;
+import com.example.sgp.MainActivity;
+import com.example.sgp.R;
+import com.example.sgp.Seller_Section.Seller_Dashboard;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

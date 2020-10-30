@@ -7,6 +7,6 @@
     android:layout_height="match_parent"
     android:background="@color/back"
     android:id="@+id/remaining_stock_recycler"
-    tools:context=".Manage_Stock_Activity">
+    tools:context=".Seller_Section.Manage_Stock_Activity">
 
 </androidx.recyclerview.widget.RecyclerView>

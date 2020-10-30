@@ -1,4 +1,4 @@
-package com.example.sgp;
+package com.example.sgp.Seller_Section;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +16,10 @@ import android.widget.Toast;
 import com.example.sgp.Adapters.Database_Class;
 import com.example.sgp.Adapters.sold_cancelled_Adapter;
 import com.example.sgp.Adapters.undelivered_BuyerPending_Adapter;
+import com.example.sgp.Dashboard;
+import com.example.sgp.MainActivity;
+import com.example.sgp.R;
+import com.example.sgp.Buyer_Section.buyer_dashboard;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -95,7 +99,7 @@ public class Seller_Statistics_Activity extends AppCompatActivity {
                 break;
             case R.id.buyer_menu_item:
                 Toast.makeText(this, "Buyer Selected", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this,buyer_dashboard.class));
+                startActivity(new Intent(this, buyer_dashboard.class));
                 break;
 
             case R.id.home_menu_item:

@@ -7,7 +7,7 @@
     android:backgroundTint="#A6FFFFFF"
     android:backgroundTintMode="multiply"
     android:orientation="vertical"
-    tools:context=".ApplicantDetails">
+    tools:context=".Login_CreateAcc_Section.ApplicantDetails">
 
     <View
         android:id="@+id/divider"

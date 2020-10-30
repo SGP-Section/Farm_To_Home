@@ -7,7 +7,7 @@
     android:background="@drawable/login_background"
     android:backgroundTint="#A6FFFFFF"
     android:backgroundTintMode="multiply"
-    tools:context=".Register">
+    tools:context=".Login_CreateAcc_Section.Register">
 
     <LinearLayout
         android:layout_width="match_parent"

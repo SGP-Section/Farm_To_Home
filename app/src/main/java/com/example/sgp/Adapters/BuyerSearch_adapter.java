@@ -12,12 +12,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.sgp.BuyActivity;
+import com.example.sgp.Buyer_Section.BuyActivity;
 import com.example.sgp.R;
 
 import java.util.ArrayList;
-
-import static androidx.core.content.ContextCompat.startActivity;
 
 public class BuyerSearch_adapter extends RecyclerView.Adapter<BuyerSearch_adapter.Buyer_ViewHolder> {
 

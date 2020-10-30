@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".BuyerSearchActivity">
+    tools:context=".Buyer_Section.BuyerSearchActivity">
     <EditText
         android:id="@+id/buyer_search_editTXT"
         android:layout_width="match_parent"

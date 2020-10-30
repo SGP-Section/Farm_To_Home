@@ -1,4 +1,4 @@
-package com.example.sgp;
+package com.example.sgp.Login_CreateAcc_Section;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 
+import com.example.sgp.Dashboard;
+import com.example.sgp.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class createAccount extends AppCompatActivity {

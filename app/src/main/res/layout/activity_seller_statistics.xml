@@ -6,6 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/back"
-    tools:context=".Seller_Statistics_Activity">
+    tools:context=".Seller_Section.Seller_Statistics_Activity">
 
 </androidx.recyclerview.widget.RecyclerView>

@@ -5,17 +5,17 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical"
-    tools:context=".EditActivity">
+    tools:context=".OptionMenu.EditActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/coustard"
-        android:textColor="@color/BuyerTextColour"
-        android:textAlignment="center"
-        android:layout_marginTop="20dp"
         android:text="Edit Account Details"
-        android:textSize="36sp" />
+        android:textAlignment="center"
+        android:textColor="@color/BuyerTextColour"
+        android:textSize="30dp" />
 
     <View
         android:id="@+id/divider4"
@@ -26,88 +26,104 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal"
-        android:paddingLeft="10dp">
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name : "
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name : "
+                android:textColor="@color/Sub_FontColor"
             android:textSize="25dp" />
 
-        <EditText
-            android:id="@+id/edt_EditName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name"
+            <EditText
+                android:id="@+id/edt_EditName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="@color/Sub_FontColor"
             android:textSize="25dp" />
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-
-        android:paddingLeft="10dp">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date Of Birth : "
+            android:orientation="horizontal"
+
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date Of Birth : "
+                android:textColor="@color/Sub_FontColor"
             android:textSize="25dp" />
 
-        <EditText
-            android:id="@+id/edt_EditDOB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DOB"
+            <EditText
+                android:id="@+id/edt_EditDOB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:text="DOB"
+                android:textColor="@color/Sub_FontColor"
             android:textSize="25dp" />
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-
-        android:paddingLeft="10dp">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Preferred Area : "
+            android:orientation="horizontal"
+
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Preferred Area : "
+                android:textColor="@color/Sub_FontColor"
             android:textSize="25dp" />
 
-        <EditText
-            android:id="@+id/edt_EditPreferredArea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Area"
+            <EditText
+                android:id="@+id/edt_EditPreferredArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Area"
+                android:textColor="@color/Sub_FontColor"
             android:textSize="25dp" />
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="10dp">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Residing Area : "
+            android:orientation="horizontal"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Residing Area : "
+                android:textColor="@color/Sub_FontColor"
             android:textSize="25dp" />
 
-        <EditText
-            android:id="@+id/edt_editResidingArea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Area"
+            <EditText
+                android:id="@+id/edt_editResidingArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Area"
+                android:textColor="@color/Sub_FontColor"
             android:textSize="25dp" />
 
+        </LinearLayout>
     </LinearLayout>
 
     <Button
@@ -116,7 +132,7 @@
         android:layout_height="54dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:background="@color/ButtonBackground"
+        android:background="@drawable/normal_btn_format"
         android:text="update"
         android:textSize="20dp" />
 </LinearLayout>
