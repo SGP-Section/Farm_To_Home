@@ -43,16 +43,17 @@
 
             <Spinner
                 android:id="@+id/spinner"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="15dp"
-                android:background="@drawable/button_background" />
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/login_code" />
 
             <EditText
                 android:id="@+id/edt_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/button_background"
+                android:background="@drawable/login_number"
                 android:digits="0123456789"
                 android:fontFamily="sans-serif"
                 android:hint="Enter Mobile Number"
@@ -69,7 +70,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="150dp"
-            android:background="#95C86A"
+            android:background="@drawable/normal_btn_format"
             android:fontFamily="@font/coustard"
             android:padding="10dp"
             android:text="Send OTP"
