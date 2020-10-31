@@ -18,8 +18,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.sgp.Adapters.Database_Class;
 import com.example.sgp.Dashboard;
 import com.example.sgp.MainActivity;
+import com.example.sgp.OptionMenu.AccountActivity;
 import com.example.sgp.R;
-import com.example.sgp.Buyer_Section.buyer_dashboard;
+import com.example.sgp.Buyer_Section.Buyer_Dashboard;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,7 +37,7 @@ public class Seller_Dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seller_dashboard);
-        getSupportActionBar().setTitle("Seller");
+        getSupportActionBar().setTitle("Seller Section");
         Initializing();
         SetProgressBar_Values();
 
@@ -216,26 +217,26 @@ public class Seller_Dashboard extends AppCompatActivity {
                 break;
             case R.id.buyer_menu_item:
                 Toast.makeText(this, "Buyer Selected", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, buyer_dashboard.class));
-                break;
+                startActivity(new Intent(this, Buyer_Dashboard.class));
 
+                break;
             case R.id.home_menu_item:
                 Toast.makeText(this, "Home Selected", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, Dashboard.class));
+
                 break;
             case R.id.account_menu_item:
-                Toast.makeText(this, "account Selected", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(this, AccountActivity.class);
+                startActivity(intent1);
                 break;
             case R.id.logout_menu_item:
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(Seller_Dashboard.this, MainActivity.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 break;
-
         }
         return super.onOptionsItemSelected(item);
     }
-
 
 }

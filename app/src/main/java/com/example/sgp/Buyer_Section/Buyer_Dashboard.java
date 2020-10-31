@@ -19,6 +19,7 @@ import com.example.sgp.Adapters.Database_Class;
 import com.example.sgp.Adapters.undelivered_BuyerPending_Adapter;
 import com.example.sgp.Dashboard;
 import com.example.sgp.MainActivity;
+import com.example.sgp.OptionMenu.AccountActivity;
 import com.example.sgp.R;
 import com.example.sgp.Seller_Section.Seller_Dashboard;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,7 +31,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class buyer_dashboard extends AppCompatActivity {
+public class Buyer_Dashboard extends AppCompatActivity {
     ArrayList<Database_Class> passing_Data_PendingCrop = new ArrayList<Database_Class>(0);
     private Button button_ProceedToBuy;
     private TextView text_PendingOrders;
@@ -43,7 +44,7 @@ public class buyer_dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buyer_dashboard);
-        getSupportActionBar().setTitle("Buyer DashBoard");
+        getSupportActionBar().setTitle("Buyer Section");
                 button_ProceedToBuy = findViewById(R.id.btn_ProceedToBuy);
         text_PendingOrders = findViewById(R.id.txt_PendingOrderNumber);
 
@@ -78,12 +79,13 @@ public class buyer_dashboard extends AppCompatActivity {
         button_ProceedToBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(buyer_dashboard.this, BuyerSearchActivity.class));
+                startActivity(new Intent(Buyer_Dashboard.this, BuyerSearchActivity.class));
             }
         });
 
     }
 
+    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.seller_menu_item:
@@ -92,27 +94,27 @@ public class buyer_dashboard extends AppCompatActivity {
                 break;
             case R.id.buyer_menu_item:
                 Toast.makeText(this, "Buyer Selected", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, buyer_dashboard.class));
-                break;
+                startActivity(new Intent(this, Buyer_Dashboard.class));
 
+                break;
             case R.id.home_menu_item:
-                Toast.makeText(this, "home Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Home Selected", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, Dashboard.class));
+
                 break;
             case R.id.account_menu_item:
-                Toast.makeText(this, "account Selected", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(this, AccountActivity.class);
+                startActivity(intent1);
                 break;
             case R.id.logout_menu_item:
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(buyer_dashboard.this, MainActivity.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 break;
-
         }
         return super.onOptionsItemSelected(item);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

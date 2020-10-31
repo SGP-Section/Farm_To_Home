@@ -38,7 +38,7 @@
             android:name=".Seller_Section.Manage_Stock_Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Buyer_Section.buyer_dashboard"
+            android:name=".Buyer_Section.Buyer_Dashboard"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Seller_Section.Seller_Dashboard"

@@ -13,7 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.sgp.Buyer_Section.buyer_dashboard;
+import com.example.sgp.Buyer_Section.Buyer_Dashboard;
 import com.example.sgp.OptionMenu.AccountActivity;
 import com.example.sgp.Seller_Section.Seller_Dashboard;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,7 +43,7 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(Dashboard.this, buyer_dashboard.class) );
+                startActivity(new Intent(Dashboard.this, Buyer_Dashboard.class) );
             }
         });
 
@@ -92,25 +92,29 @@ public class Dashboard extends AppCompatActivity {
                 break;
             case id.buyer_menu_item:
                 Toast.makeText(this, "Buyer Selected", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this,buyer_dashboard.class));
+                startActivity(new Intent(this, Buyer_Dashboard.class));
 
                 break;
             case id.home_menu_item:
                 Toast.makeText(this, "Home Selected", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, Dashboard.class));
+
                 break;
             case id.account_menu_item:
-                Intent intent1 = new Intent(Dashboard.this, AccountActivity.class);
+                Intent intent1 = new Intent(this, AccountActivity.class);
                 startActivity(intent1);
                 break;
             case id.logout_menu_item:
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(Dashboard.this, MainActivity.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

@@ -10,13 +10,12 @@
         android:id="@+id/txt_toSell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/coustard"
         android:gravity="center"
-        android:paddingTop="30dp"
         android:text="TO SELL"
-        android:textSize="30sp"
         android:textColor="@color/BuyerTextColour"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <View
@@ -29,16 +28,17 @@
     <View
         android:id="@+id/spacing"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_below="@+id/txt_toSell" />
+        android:layout_height="5dp"
+        android:layout_below="@+id/txt_toSell"
+        android:background="@color/BuyerTextColour" />
 
     <TextView
         android:id="@+id/txt_cropNameSell"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_below="@+id/spacing"
-        android:layout_marginTop="2dp"
-        android:paddingStart="10sp"
+        android:layout_marginTop="20dp"
+        android:paddingStart="20dp"
 
         android:paddingTop="8sp"
         android:text="Name of Crop :"
@@ -51,12 +51,13 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/spacing"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
-        android:scrollY="30dp"
         android:layout_toEndOf="@+id/txt_cropNameSell"
         android:hint="Enter Crop Name"
-
         android:inputType="text"
+
+        android:scrollY="30dp"
         android:textColor="@color/Main_FontColor" />
 
     <TextView
@@ -66,7 +67,8 @@
         android:layout_below="@+id/txt_cropNameSell"
         android:layout_marginTop="2dp"
 
-        android:paddingStart="10sp"
+        android:paddingStart="20dp"
+
         android:text="Preferred Area: "
         android:textColor="@color/Main_FontColor"
         android:textSize="20sp" />
@@ -90,7 +92,8 @@
         android:layout_height="50dp"
         android:layout_below="@+id/edt_PreferredArea"
         android:layout_marginTop="2dp"
-        android:paddingStart="10sp"
+        android:paddingStart="20dp"
+
 
         android:text="Weight of 1 Quantity: "
         android:textColor="@color/Main_FontColor"
@@ -110,7 +113,8 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_below="@+id/txt_weightSell"
-        android:paddingStart="10sp"
+        android:paddingStart="20dp"
+
 
         android:paddingTop="8sp"
         android:text="Quantity Of Item: "
@@ -132,7 +136,8 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_below="@+id/txt_QuantitySell"
-        android:paddingStart="10sp"
+        android:paddingStart="20dp"
+
         android:paddingTop="8sp"
         android:text="Price of 1 Quantity: ₹"
 
@@ -152,16 +157,17 @@
 
     <Button
         android:id="@+id/btn_proceedSell"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_priceSell"
-        android:layout_marginHorizontal="100sp"
-        android:background="@color/ButtonBackground"
-        android:layout_marginTop="20sp"
-        android:layout_marginBottom="245dp"
-        android:textColor="@android:color/black"
-        android:textAlignment="center"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="213dp"
+        android:background="@drawable/normal_btn_format"
+        android:padding="10dp"
         android:text="PROCEED"
-        android:textSize="25sp" />
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="35dp" />
 
 </RelativeLayout>

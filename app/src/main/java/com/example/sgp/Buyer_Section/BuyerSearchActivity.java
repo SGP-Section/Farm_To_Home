@@ -20,6 +20,7 @@ import com.example.sgp.Adapters.BuyerSearch_adapter;
 import com.example.sgp.Adapters.Database_Class;
 import com.example.sgp.Dashboard;
 import com.example.sgp.MainActivity;
+import com.example.sgp.OptionMenu.AccountActivity;
 import com.example.sgp.R;
 import com.example.sgp.Seller_Section.Seller_Dashboard;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,6 +44,8 @@ public class BuyerSearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buyer_search);
+        getSupportActionBar().setTitle("Buyer Section");
+
         Search_edtxt=findViewById(R.id.buyer_search_editTXT);
         mainCardList_Value = new ArrayList<>(0);
         mainCardList_Key = new ArrayList<>(0);
@@ -131,6 +134,7 @@ public class BuyerSearchActivity extends AppCompatActivity {
     }
 
 
+    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.seller_menu_item:
@@ -139,26 +143,27 @@ public class BuyerSearchActivity extends AppCompatActivity {
                 break;
             case R.id.buyer_menu_item:
                 Toast.makeText(this, "Buyer Selected", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, buyer_dashboard.class));
+                startActivity(new Intent(this, Buyer_Dashboard.class));
+
                 break;
             case R.id.home_menu_item:
-                Toast.makeText(this, "home Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Home Selected", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, Dashboard.class));
+
                 break;
             case R.id.account_menu_item:
-                Toast.makeText(this, "account Selected", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(this, AccountActivity.class);
+                startActivity(intent1);
                 break;
             case R.id.logout_menu_item:
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(BuyerSearchActivity.this, MainActivity.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 break;
-
         }
         return super.onOptionsItemSelected(item);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

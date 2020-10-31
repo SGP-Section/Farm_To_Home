@@ -12,8 +12,8 @@
 
     <Button
         android:id="@+id/btn_seller"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
 
         android:layout_marginBottom="32dp"
         android:background="@drawable/normal_btn_format"
@@ -31,18 +31,20 @@
 
     <Button
         android:id="@+id/btn_buyer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="296dp"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+
+        android:layout_marginBottom="212dp"
         android:background="@drawable/normal_btn_format"
         android:fontFamily="@font/coustard"
         android:padding="10dp"
         android:text="buyer"
-        android:textColor="#000000"
 
+        android:textColor="#000000"
         android:textSize="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
 

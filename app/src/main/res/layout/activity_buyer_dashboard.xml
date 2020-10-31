@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/back"
-    tools:context=".Buyer_Section.buyer_dashboard">
+    android:orientation="vertical"
+    tools:context=".Buyer_Section.Buyer_Dashboard">
 
     <Button
         android:id="@+id/btn_ProceedToBuy"
@@ -13,11 +13,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:background="@color/ButtonBackground"
+        android:background="@drawable/normal_btn_format"
         android:fontFamily="@font/coustard"
         android:paddingHorizontal="20sp"
         android:text="Proceed to buy"
-        android:textColor="#FFFFFF"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -26,54 +26,52 @@
         android:layout_height="2dp"
         android:layout_marginTop="30dp"
         android:background="#575757" />
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/RecyclerBKG"
+        android:orientation="vertical">
     <TextView
         android:id="@+id/txt_PendingCrops"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/coustard"
-        android:background="#ADE8FFCD"
+        android:gravity="center"
         android:text="Pending"
-        android:textColor="#352F2F"
+        android:textColor="@color/Main_FontColor"
         android:textSize="35sp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#ADE8FFCD"
-        >
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="15dp"
-            android:text="Pending Orders :-"
-            android:textSize="25sp"
-            android:textColor="#686868"
             android:paddingTop="2sp"
             android:paddingBottom="2sp"
-            android:textStyle="bold"
-            />
+            android:text="Pending Orders :-"
+            android:textColor="@color/Sub_FontColor"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txt_PendingOrderNumber"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
-            android:text="0"
-            android:textColor="#6A6A6A"
-            android:textSize="25sp"
             android:paddingTop="2sp"
             android:paddingBottom="2sp"
-            android:textStyle="bold"
-            />
+            android:text="0"
+            android:textColor="@color/Sub_FontColor"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
-
+</LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
@@ -82,18 +80,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="0dp"
-        >
+        android:layout_marginTop="0dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview_pendingCrops"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="4dp"
             android:background="#FFFFFF"
-            android:scrollbars="vertical"
-           />
-
+            android:padding="4dp"
+            android:scrollbars="vertical" />
 
 
     </LinearLayout>
