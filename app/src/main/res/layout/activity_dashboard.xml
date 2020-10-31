@@ -2,50 +2,47 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dash_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/back"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".Dashboard">
 
-    <Button
-        android:id="@+id/btn_seller"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/normal_btn_format"
-        android:fontFamily="@font/coustard"
-        android:padding="10dp"
-        android:text="seller"
-        android:textColor="#000000"
-        android:textSize="45dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_buyer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
-
-    <Button
-        android:id="@+id/btn_buyer"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-
-        android:layout_marginBottom="212dp"
-        android:background="@drawable/normal_btn_format"
-        android:fontFamily="@font/coustard"
-        android:padding="10dp"
-        android:text="buyer"
-
-        android:textColor="#000000"
-        android:textSize="45dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498">
 
+        <Button
+
+            android:id="@+id/btn_seller"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="50dp"
+            android:background="@color/RecyclerBKG"
+            android:fontFamily="@font/coustard"
+            android:padding="10dp"
+            android:text="Seller"
+            android:textColor="#000000"
+            android:textSize="45dp" />
+
+        <Button
+            android:id="@+id/btn_buyer"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/RecyclerBKG"
+            android:fontFamily="@font/coustard"
+            android:padding="10dp"
+            android:text="buyer"
+            android:textColor="#000000"
+            android:textSize="45dp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

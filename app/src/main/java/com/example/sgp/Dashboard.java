@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -34,8 +35,8 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_dashboard);
         getSupportActionBar().setTitle("Dashboard");
-        button_buyer = findViewById(id.btn_buyer);
-        button_seller = findViewById(id.btn_seller);
+        button_buyer = findViewById(R.id.btn_buyer);
+        button_seller = findViewById(R.id.btn_seller);
         LoadData();
 
 
