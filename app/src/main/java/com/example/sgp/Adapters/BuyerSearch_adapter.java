@@ -32,7 +32,6 @@ public class BuyerSearch_adapter extends RecyclerView.Adapter<BuyerSearch_adapte
     ArrayList<String> Keys;
     Context context;
     Activity activity;
-    private static final int REQUEST_CALL=1;
 
     public BuyerSearch_adapter(Context context, ArrayList<Database_Class> mCardList, ArrayList<String> Keys) {
         this.context = context;
