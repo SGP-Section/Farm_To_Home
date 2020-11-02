@@ -16,7 +16,7 @@ import com.example.sgp.Dashboard;
 import com.example.sgp.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class createAccount extends AppCompatActivity {
+public class Create_Account extends AppCompatActivity {
     static String phoneNumber;
     private Spinner spinner;
     private EditText editTextMobile;
@@ -49,8 +49,8 @@ public class createAccount extends AppCompatActivity {
                 }
 
                 phoneNumber = "+"+ code + Number;
-                Toast.makeText(createAccount.this, phoneNumber, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(createAccount.this, Register.class);
+                Toast.makeText(Create_Account.this, phoneNumber, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Create_Account.this, OTP_Verification.class);
                 intent.putExtra("PhoneNumber",phoneNumber);
                 startActivity(intent);
 
@@ -64,7 +64,7 @@ public class createAccount extends AppCompatActivity {
 
         if(FirebaseAuth.getInstance().getCurrentUser()!=null){
 
-            Intent intent = new Intent(createAccount.this, Dashboard.class);
+            Intent intent = new Intent(Create_Account.this, Dashboard.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
 

@@ -55,11 +55,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Login_CreateAcc_Section.createAccount"
+            android:name=".Login_CreateAcc_Section.Create_Account"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Login_CreateAcc_Section.Register"
+            android:name=".Login_CreateAcc_Section.OTP_Verification"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity

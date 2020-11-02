@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="0sp"
+        android:background="@drawable/recycler_background"
         android:padding="4dp">
 
         <TextView

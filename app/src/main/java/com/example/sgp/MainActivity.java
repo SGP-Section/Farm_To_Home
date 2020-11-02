@@ -16,7 +16,7 @@ import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.sgp.Login_CreateAcc_Section.createAccount;
+import com.example.sgp.Login_CreateAcc_Section.Create_Account;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFinish() {
-                    startActivity(new Intent(MainActivity.this, createAccount.class));
+                    startActivity(new Intent(MainActivity.this, Create_Account.class));
                     finish();
                 }
             }.start();

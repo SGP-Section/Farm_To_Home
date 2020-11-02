@@ -122,4 +122,11 @@ public class Buyer_Dashboard extends AppCompatActivity {
         menu.removeItem(R.id.buyer_menu_item);
         return true;
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,Dashboard.class));
+    }
+
 }

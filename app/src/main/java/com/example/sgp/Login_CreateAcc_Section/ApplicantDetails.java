@@ -14,6 +14,9 @@ import com.example.sgp.Dashboard;
 import com.example.sgp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -54,6 +57,7 @@ public class ApplicantDetails extends AppCompatActivity {
                 data.put("dob",dob);
                 data.put("Residing Area",resArea);
                 data.put("Preferred Area",prefArea);
+                InitalizeRealTime(mobileNumber);
 
                 boolean C1 = SaveToFirebase(data, "DATA", mobileNumber);
 
@@ -81,7 +85,7 @@ public class ApplicantDetails extends AppCompatActivity {
     }
 
     //Method to save data to firebase
-    protected boolean SaveToFirebase(final Map<String,Object> data, String destination, String mobileCreate){
+     boolean SaveToFirebase(final Map<String,Object> data, String destination, String mobileCreate){
         FirebaseFirestore fb=FirebaseFirestore.getInstance();
         DocumentReference dref=fb.collection(destination).document(mobileCreate);
         dref.set(data)
@@ -101,4 +105,11 @@ public class ApplicantDetails extends AppCompatActivity {
                 });
         return ret;
     }
+    //Method to save data to firebase
+     void InitalizeRealTime(String mobileCreate){
+         FirebaseDatabase.getInstance().getReference("Data/"+mobileCreate+"/Buyer/nextOrderCounterB").setValue("0");
+         int z=0;
+         FirebaseDatabase.getInstance().getReference("Data/"+mobileCreate+"/Seller/nextOrderCounter").setValue(z);
+
+     }
 }

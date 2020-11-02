@@ -7,14 +7,15 @@
     android:backgroundTint="#A6FFFFFF"
     android:backgroundTintMode="multiply"
     android:orientation="vertical"
+
     tools:context=".Login_CreateAcc_Section.ApplicantDetails">
 
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_marginTop="100sp"
-        android:background="#50912C" />
+        android:layout_marginTop="80dp"
+        android:background="@color/BuyerTextColour" />
 
     <TextView
         android:id="@+id/createacc_label"
@@ -26,126 +27,137 @@
         android:fontFamily="@font/coustard"
         android:gravity="center_horizontal"
         android:text="Create Account"
-        android:textColor="#2A6039"
-        android:textSize="45dp"
+        android:textColor="@color/BuyerTextColour"
+        android:textSize="40dp"
         android:textStyle="bold" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:background="#50912C" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:fontFamily="@font/coustard"
-        android:paddingLeft="30dp"
-        android:text="Name:"
-        android:textColor="#2E2D2D"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
-    <EditText
-        android:id="@+id/name_create"
-        android:layout_width="346dp"
-        android:layout_height="36dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/rounding"
-        android:hint="Enter Name"
-        android:inputType="text"
-        android:paddingLeft="10dp"
-        android:textColorHint="#7A706E" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/coustard"
+            android:paddingLeft="30dp"
+            android:text="Name:"
+            android:textColor="#2E2D2D"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        android:fontFamily="@font/coustard"
-        android:paddingLeft="30dp"
-        android:text="Date Of Birth:"
+        <EditText
+            android:id="@+id/name_create"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rounding"
+            android:hint="Enter Name"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:textColorHint="#7A706E" />
 
-        android:textColor="#2E2D2D"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/coustard"
+            android:paddingLeft="30dp"
+            android:text="Date Of Birth:"
 
-    <EditText
-        android:id="@+id/date_create"
-        android:layout_width="346dp"
-        android:layout_height="36dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/rounding"
-        android:hint="Enter Date Of Birth"
-        android:inputType="date"
-        android:paddingLeft="10dp"
-        android:textColorHint="#7A706E" />
+            android:textColor="#2E2D2D"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        android:fontFamily="@font/coustard"
-        android:paddingLeft="30dp"
-        android:text="Preferred Area:"
-        android:textColor="#2E2D2D"
+        <EditText
+            android:id="@+id/date_create"
+            android:layout_width="match_parent"
 
-        android:textSize="22sp"
-        android:textStyle="bold" />
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rounding"
+            android:hint="Enter Date Of Birth(DD/MM/YYYY)"
+            android:inputType="date"
+            android:paddingLeft="10dp"
+            android:textColorHint="#7A706E" />
 
-    <EditText
-        android:id="@+id/pref_area_create"
-        android:layout_width="346dp"
-        android:layout_height="36dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/rounding"
-        android:hint="Enter Preferred Area"
-        android:inputType="text"
-        android:paddingLeft="10dp"
-        android:textColorHint="#7A706E" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/coustard"
+            android:paddingLeft="30dp"
+            android:text="Preferred Area:"
+            android:textColor="#2E2D2D"
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        android:fontFamily="@font/coustard"
-        android:paddingLeft="30dp"
-        android:text="Residing Area:"
-        android:textColor="#2E2D2D"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        <EditText
+            android:id="@+id/pref_area_create"
+            android:layout_width="match_parent"
 
-    <EditText
-        android:id="@+id/res_area_create"
-        android:layout_width="346dp"
-        android:layout_height="36dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/rounding"
-        android:hint="Enter your Residing Area"
-        android:inputType="text"
-        android:paddingStart="10sp"
-        android:textColorHint="#7A706E" />
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rounding"
+            android:hint="Enter Preferred Area"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:textColorHint="#7A706E" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/coustard"
+            android:paddingLeft="30dp"
+            android:text="Residing Area:"
+            android:textColor="#2E2D2D"
+
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/res_area_create"
+            android:layout_width="match_parent"
+
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rounding"
+            android:hint="Enter your Residing Area"
+            android:inputType="text"
+            android:paddingStart="10sp"
+            android:textColorHint="#7A706E" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/button_create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/normal_btn_format"
         android:layout_marginBottom="88dp"
-        android:background="#62B14C"
-        android:fontFamily="casual"
+        android:fontFamily="@font/coustard"
+        android:padding="10dp"
         android:text="Next"
         android:textAlignment="center"
-        android:textAllCaps="false"
         android:textSize="30sp"
         android:textStyle="bold" />
 </LinearLayout>

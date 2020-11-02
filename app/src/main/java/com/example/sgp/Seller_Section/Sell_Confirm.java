@@ -47,7 +47,7 @@ public class Sell_Confirm extends AppCompatActivity {
         String TotalWeight_i = String.format("%-10.3f kg", temp);
         double PricePerQuantity = parseDouble((getIntent().getStringExtra("PricePerQuantity")));
         temp = temp * PricePerQuantity;
-        String TotalPrice_i = "Rs." + String.format("%.2f", temp);
+        String TotalPrice_i = "₹ " + String.format("%.2f", temp);
 
 
 

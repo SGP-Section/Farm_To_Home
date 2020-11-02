@@ -7,7 +7,7 @@
     android:background="@drawable/login_background"
     android:backgroundTint="#A6FFFFFF"
     android:backgroundTintMode="multiply"
-    tools:context=".Login_CreateAcc_Section.Register">
+    tools:context=".Login_CreateAcc_Section.OTP_Verification">
 
     <LinearLayout
         android:layout_width="match_parent"

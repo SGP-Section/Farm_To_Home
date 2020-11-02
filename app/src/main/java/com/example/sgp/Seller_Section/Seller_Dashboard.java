@@ -112,6 +112,8 @@ public class Seller_Dashboard extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         int M = Integer.parseInt(snapshot.getValue().toString());
+                        if(M==1)
+                            M++;
                         sold_PgBar.setMax(M);
                         undel_PgBar.setMax(M);
                         Log.d("Tag", M + ":" + snapshot.getKey());
@@ -198,6 +200,12 @@ public class Seller_Dashboard extends AppCompatActivity {
 
                     }
                 });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,Dashboard.class));
     }
 
     @Override

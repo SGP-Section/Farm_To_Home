@@ -59,7 +59,7 @@ public class BuyActivity extends AppCompatActivity {
         txt_name.setText(NameValue);
         txt_crop.setText(CropNameValue);
         txt_weight.setText(WeightValue);
-        txt_price.setText(PriceValue);
+        txt_price.setText("₹ "+PriceValue);
         txt_area.setText(AreaValue);
 //        quantity = Integer.parseInt(txt_qua.getText().toString());
         double_total_price = quantity * double_price;
@@ -78,7 +78,7 @@ public class BuyActivity extends AppCompatActivity {
                 }
                 double_total_price = quantity * double_price;
                 txt_qua.setText(quantity + "");
-                txt_totalPrice.setText(double_total_price + "");
+                txt_totalPrice.setText("₹ "+double_total_price );
 
 
             }

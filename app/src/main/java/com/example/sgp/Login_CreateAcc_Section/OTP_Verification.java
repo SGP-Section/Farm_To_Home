@@ -31,7 +31,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.concurrent.TimeUnit;
 
-public class Register extends AppCompatActivity {
+public class OTP_Verification extends AppCompatActivity {
 
     private String verifyCode,phoneNumber;
     private Button btnSignIn;
@@ -78,6 +78,39 @@ public class Register extends AppCompatActivity {
 
     }
 
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallback = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+
+        @Override
+        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+            super.onCodeSent(s, forceResendingToken);
+
+            verifyCode = s;
+        }
+
+        @Override
+        public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+
+            String code = phoneAuthCredential.getSmsCode().toString();
+
+            if(!code.isEmpty()){
+                editText.setText(code);
+                verifyManuallyVerifyCode(code);
+            }
+        }
+
+        @Override
+        public void onVerificationFailed(FirebaseException e) {
+            Toast.makeText(OTP_Verification.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    };
+
+    private void sendVerificationCode(String number){
+
+        progressBar.setVisibility(View.VISIBLE);
+        PhoneAuthProvider.getInstance().verifyPhoneNumber(number,2, TimeUnit.MINUTES, TaskExecutors.MAIN_THREAD, mCallback);
+
+    }
+
     private void signInWithCredential(PhoneAuthCredential credential) {
 
 
@@ -98,7 +131,7 @@ public class Register extends AppCompatActivity {
                                             Log.d("=======>", "Document exists!&& asking decision");
 
 
-                                            Dialog dialog = new Dialog(Register.this);
+                                            Dialog dialog = new Dialog(OTP_Verification.this);
                                             dialog.setContentView(R.layout.login_dialog);
                                             dialog.setCanceledOnTouchOutside(false);
                                             dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
@@ -109,7 +142,7 @@ public class Register extends AppCompatActivity {
                                             Login_dialog.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View view) {
-                                                    Intent intent = new Intent(Register.this, Dashboard.class);
+                                                    Intent intent = new Intent(OTP_Verification.this, Dashboard.class);
                                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 //                                                intent.putExtra("PhoneNumber",phoneNumber);
                                                     startActivity(intent);
@@ -118,7 +151,7 @@ public class Register extends AppCompatActivity {
                                             CreateAcc_dialog.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View view) {
-                                                    Intent intent = new Intent(Register.this, ApplicantDetails.class);
+                                                    Intent intent = new Intent(OTP_Verification.this, ApplicantDetails.class);
                                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                                     intent.putExtra("PhoneNumber",phoneNumber);
                                                     startActivity(intent);
@@ -128,7 +161,10 @@ public class Register extends AppCompatActivity {
 
 
                                         } else {
-
+                                            Intent intent = new Intent(OTP_Verification.this, ApplicantDetails.class);
+                                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                            intent.putExtra("PhoneNumber",phoneNumber);
+                                            startActivity(intent);
                                             Log.d("=======>", "Document does not exist!&& Login");
                                         }
                                     } else {
@@ -140,44 +176,11 @@ public class Register extends AppCompatActivity {
 
 
                         }else{
-                            Toast.makeText(Register.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(OTP_Verification.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
 
     }
-
-    private void sendVerificationCode(String number){
-
-        progressBar.setVisibility(View.VISIBLE);
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(number,2, TimeUnit.MINUTES, TaskExecutors.MAIN_THREAD, mCallback);
-
-    }
-
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallback = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-
-        @Override
-        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-            super.onCodeSent(s, forceResendingToken);
-
-            verifyCode = s;
-        }
-
-        @Override
-        public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
-
-            String code = phoneAuthCredential.getSmsCode();
-
-            if(code !=null){
-                editText.setText(code);
-                verifyManuallyVerifyCode(code);
-            }
-        }
-
-        @Override
-        public void onVerificationFailed(FirebaseException e) {
-            Toast.makeText(Register.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-    };
 
 }

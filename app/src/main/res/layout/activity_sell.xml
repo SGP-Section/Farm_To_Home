@@ -105,6 +105,8 @@
         android:layout_height="50dp"
         android:layout_below="@+id/edt_PreferredArea"
 
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
         android:layout_toEndOf="@+id/txt_weightSell"
         android:textColor="@color/Main_FontColor" />
 
