@@ -33,7 +33,13 @@ import java.util.ArrayList;
 
 
 public class BuyerSearchActivity extends AppCompatActivity {
-      static ArrayList<Database_Class> mainCardList_Value;
+    static ArrayList<Database_Class> mainCardList_Value;
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,Buyer_Dashboard.class));
+    }
       static ArrayList<String> mainCardList_Key;
     private BuyerSearch_adapter data_adapter;
     private RecyclerView recyclerView;

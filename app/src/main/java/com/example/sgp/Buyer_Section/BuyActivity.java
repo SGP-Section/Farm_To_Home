@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sgp.Adapters.Database_Class;
+import com.example.sgp.Login_CreateAcc_Section.ApplicantDetails;
+import com.example.sgp.Login_CreateAcc_Section.OTP_Verification;
 import com.example.sgp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -128,9 +130,10 @@ public class BuyActivity extends AppCompatActivity {
     void RealTimeCleanUp(int Tquantity, String key) {
         if (Tquantity == 0) {
             FirebaseDatabase.getInstance().getReference("Main Stock/Orders/" + key).removeValue();
+            Intent intent =new Intent(BuyActivity.this, BuyerSearchActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
             Toast.makeText(BuyActivity.this, "Stock ", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(BuyActivity.this, BuyerSearchActivity.class));
-
         }
     }
 

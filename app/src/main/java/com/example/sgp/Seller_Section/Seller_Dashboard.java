@@ -16,11 +16,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sgp.Adapters.Database_Class;
+import com.example.sgp.Buyer_Section.Buyer_Dashboard;
 import com.example.sgp.Dashboard;
 import com.example.sgp.MainActivity;
 import com.example.sgp.OptionMenu.AccountActivity;
 import com.example.sgp.R;
-import com.example.sgp.Buyer_Section.Buyer_Dashboard;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,7 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Seller_Dashboard extends AppCompatActivity {
     ProgressBar sold_PgBar, undel_PgBar;
     String MobileNo = null;
-    TextView Sold_kg,Sold_per,Undel_kg,Undel_per,Cancel_kg, Cancel_NoOfOrder;
+    TextView Sold_kg, Sold_per, Undel_kg, Undel_per, Cancel_kg, Cancel_NoOfOrder;
     Button Sold_btn, undelivered_btn, cancel_btn, To_Sell, Remaining_stocks;
 
     @Override
@@ -80,7 +80,6 @@ public class Seller_Dashboard extends AppCompatActivity {
         });
 
 
-
         Remaining_stocks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,7 +88,8 @@ public class Seller_Dashboard extends AppCompatActivity {
             }
         });
     }
-    void Initializing(){
+
+    void Initializing() {
         MobileNo = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
         Remaining_stocks = findViewById(R.id.remaining_stock_btn);
         Sold_btn = findViewById(R.id.sold_button);
@@ -99,10 +99,10 @@ public class Seller_Dashboard extends AppCompatActivity {
         sold_PgBar = (ProgressBar) findViewById(R.id.sold_progBar);
         undel_PgBar = (ProgressBar) findViewById(R.id.undel_progBar);
         Sold_kg = findViewById(R.id.sold_kg);
-        Sold_per= findViewById(R.id.sold_percentage);//(00.00%)
-        Undel_kg= findViewById(R.id.not_sold_kg);
-        Undel_per= findViewById(R.id.not_sold_percentage);//(00.00%)
-        Cancel_kg= findViewById(R.id.canelled_kg);
+        Sold_per = findViewById(R.id.sold_percentage);//(00.00%)
+        Undel_kg = findViewById(R.id.not_sold_kg);
+        Undel_per = findViewById(R.id.not_sold_percentage);//(00.00%)
+        Cancel_kg = findViewById(R.id.canelled_kg);
         Cancel_NoOfOrder = findViewById(R.id.canelled_number);
     }
 
@@ -112,7 +112,7 @@ public class Seller_Dashboard extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         int M = Integer.parseInt(snapshot.getValue().toString());
-                        if(M==1)
+                        if (M == 1)
                             M++;
                         sold_PgBar.setMax(M);
                         undel_PgBar.setMax(M);
@@ -130,18 +130,21 @@ public class Seller_Dashboard extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         int counter = 0;
-                        float KG=0f,Total=(float) sold_PgBar.getMax();
+                        float KG = 0f, Total = (float) sold_PgBar.getMax(), per = 0;
                         for (DataSnapshot D : dataSnapshot.getChildren()) {
-                            Database_Class Obj=D.getValue(Database_Class.class);
-                            KG+=Float.parseFloat(Obj.mWeightValue);
+                            Database_Class Obj = D.getValue(Database_Class.class);
+                            KG += Float.parseFloat(Obj.mWeightValue);
                             counter++;
                             Log.d("Tag", "S:" + counter);
                         }
-                        Log.d("Tag",KG+"");
+                        Log.d("Tag", KG + "");
                         sold_PgBar.setProgress(counter);
-                        float per =(counter*100.00f)/Total;
-                        Sold_per.setText("("+String.format("%6.2f",per)+"%)");
-                        Sold_kg.setText(String.format("%6.2f",KG));
+                        if (counter == 0)
+                            per = 0f;
+                        else
+                            per = (counter * 100.00f) / Total;
+                        Sold_per.setText("(" + String.format("%6.2f", per) + "%)");
+                        Sold_kg.setText(String.format("%6.2f", KG));
 
                     }
 
@@ -155,18 +158,21 @@ public class Seller_Dashboard extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         int counter = 0;
-                        float KG=0f,Total=(float) sold_PgBar.getMax();
+                        float KG = 0f, Total = (float) sold_PgBar.getMax(),per;
 
                         for (DataSnapshot D : dataSnapshot.getChildren()) {
-                            Database_Class Obj=D.getValue(Database_Class.class);
-                            KG+=Float.parseFloat(Obj.mWeightValue);
+                            Database_Class Obj = D.getValue(Database_Class.class);
+                            KG += Float.parseFloat(Obj.mWeightValue);
                             counter++;
                             Log.d("Tag", "U:" + counter);
                         }
                         undel_PgBar.setProgress(counter);
-                        float per =(counter*100.00f)/Total;
-                        Undel_per.setText("("+String.format("%3.2f",per)+"%)");
-                        Undel_kg.setText(String.format("%6.2f",KG));
+                        if (counter == 0)
+                            per = 0f;
+                        else
+                            per = (counter * 100.00f) / Total;
+                        Undel_per.setText("(" + String.format("%3.2f", per) + "%)");
+                        Undel_kg.setText(String.format("%6.2f", KG));
 
                     }
 
@@ -181,17 +187,17 @@ public class Seller_Dashboard extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         int counter = 0;
-                        float KG=0f;
+                        float KG = 0f;
 
                         for (DataSnapshot D : dataSnapshot.getChildren()) {
-                            Database_Class Obj=D.getValue(Database_Class.class);
-                            KG+=Float.parseFloat(Obj.mWeightValue);
+                            Database_Class Obj = D.getValue(Database_Class.class);
+                            KG += Float.parseFloat(Obj.mWeightValue);
                             counter++;
                             Log.d("Tag", "C:" + counter);
                         }
                         undel_PgBar.setProgress(counter);
-                        Cancel_NoOfOrder.setText(counter+"");
-                        Cancel_kg.setText(String.format("%6.2f",KG));
+                        Cancel_NoOfOrder.setText(counter + "");
+                        Cancel_kg.setText(String.format("%6.2f", KG));
 
                     }
 
@@ -205,7 +211,7 @@ public class Seller_Dashboard extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(this,Dashboard.class));
+        startActivity(new Intent(this, Dashboard.class));
     }
 
     @Override
