@@ -1,7 +1,11 @@
 package com.example.sgp.Adapters;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,22 +14,29 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sgp.Buyer_Section.BuyActivity;
+import com.example.sgp.Buyer_Section.BuyerSearchActivity;
+import com.example.sgp.Buyer_Section.CallActivity;
 import com.example.sgp.R;
 
 import java.util.ArrayList;
 
-public class BuyerSearch_adapter extends RecyclerView.Adapter<BuyerSearch_adapter.Buyer_ViewHolder> {
+public class BuyerSearch_adapter extends RecyclerView.Adapter<BuyerSearch_adapter.Buyer_ViewHolder>{
 
     ArrayList<Database_Class> BuyerCardList;
     //    ArrayList<Database_Class> BuyerCardListFull;
     ArrayList<String> Keys;
     Context context;
+    Activity activity;
+    private static final int REQUEST_CALL=1;
 
     public BuyerSearch_adapter(Context context, ArrayList<Database_Class> mCardList, ArrayList<String> Keys) {
         this.context = context;
+        this.activity = (Activity)context;
         BuyerCardList = mCardList;
         this.Keys = Keys;
 //        BuyerCardListFull = new ArrayList<>(mCardList);
@@ -72,8 +83,16 @@ public class BuyerSearch_adapter extends RecyclerView.Adapter<BuyerSearch_adapte
                 intent.putExtra("AreaValue", AreaValue);
                 intent.putExtra("DateValue", DateValue);
                 context.startActivity(intent);
+            }
+        });
 
+        holder.call_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent intent = new Intent(context, CallActivity.class);
+                intent.putExtra("PhNoValue",PhnoValue);
+                context.startActivity(intent);
             }
         });
 
@@ -82,7 +101,7 @@ public class BuyerSearch_adapter extends RecyclerView.Adapter<BuyerSearch_adapte
     public static class Buyer_ViewHolder extends RecyclerView.ViewHolder {
 
         TextView SellerNameValue, SellerPhno, CropNameValue, QuantityValue, WeightValue, AreaValue;
-        ImageButton to_buy;
+        ImageButton to_buy,call_btn;
 
         public Buyer_ViewHolder(@NonNull final View itemView) {
             super(itemView);
@@ -94,7 +113,7 @@ public class BuyerSearch_adapter extends RecyclerView.Adapter<BuyerSearch_adapte
             WeightValue = itemView.findViewById(R.id.txt_weight_value);
             AreaValue = itemView.findViewById(R.id.txt_area_value);
             to_buy = itemView.findViewById(R.id.To_Buy_btn);
-
+            call_btn = itemView.findViewById(R.id.callButton);
 
         }
     }

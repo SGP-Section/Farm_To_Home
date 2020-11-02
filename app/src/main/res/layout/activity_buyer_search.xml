@@ -13,9 +13,9 @@
         android:background="@drawable/search_bar"
         android:paddingRight="10dp"
         android:paddingLeft="30dp"
- android:layout_margin="10dp"
-
+        android:layout_margin="10dp"
         android:layout_height="50dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_buyerSearch"
         android:layout_width="match_parent"

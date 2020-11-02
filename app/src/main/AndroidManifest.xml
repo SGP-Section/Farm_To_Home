@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sgp">
 
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_logo_main_bkg"
@@ -9,16 +11,15 @@
         android:roundIcon="@drawable/ic_logo_main_bkg"
         android:supportsRtl="true"
         android:theme="@style/AppTheme_Custom">
+        <activity android:name=".Buyer_Section.CallActivity" />
         <activity
             android:name=".OptionMenu.EditActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
             android:name=".OptionMenu.AccountActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
             android:name=".Buyer_Section.BuyActivity"
             android:screenOrientation="portrait"
@@ -43,7 +44,7 @@
         <activity
             android:name=".Seller_Section.Seller_Dashboard"
             android:screenOrientation="portrait"
-            android:theme="@style/AppCompat_Custom"/>
+            android:theme="@style/AppCompat_Custom" />
         <activity
             android:name=".Buyer_Section.BuyerSearchActivity"
             android:screenOrientation="portrait" />

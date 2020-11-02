@@ -1,6 +1,7 @@
 package com.example.sgp.Buyer_Section;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.sgp.Adapters.BuyerSearch_adapter;
 import com.example.sgp.Adapters.Database_Class;
 import com.example.sgp.Login_CreateAcc_Section.ApplicantDetails;
 import com.example.sgp.Login_CreateAcc_Section.OTP_Verification;
@@ -31,7 +33,7 @@ public class BuyActivity extends AppCompatActivity {
     int quantity, total_quantity;
     TextView txt_name, txt_crop, txt_weight, txt_qua, txt_price, txt_totalPrice, txt_area;
     ImageButton increaseQua, decreaseQua;
-    Button buy_Btn,btnCall;
+    Button buy_Btn;
     String MobileNo = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
     int OrderNo = 0;
 
