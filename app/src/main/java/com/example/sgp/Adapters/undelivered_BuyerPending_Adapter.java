@@ -1,14 +1,21 @@
 package com.example.sgp.Adapters;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sgp.Buyer_Section.Buyer_Dashboard;
 import com.example.sgp.R;
 
 import java.util.ArrayList;
@@ -16,10 +23,12 @@ import java.util.ArrayList;
 public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undelivered_BuyerPending_Adapter.undelivered_ViewHolder> {
     ArrayList<Database_Class> Data = new ArrayList<Database_Class>(0);
     char decision;
+    Context context;
 
-    public undelivered_BuyerPending_Adapter(ArrayList<Database_Class> data, char decision) {
+    public undelivered_BuyerPending_Adapter(ArrayList<Database_Class> data, char decision, Context context) {
         this.decision = decision;
         this.Data = data;
+        this.context=context;
     }
 
     @Override
@@ -31,6 +40,13 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
 
     @Override
     public void onBindViewHolder(@NonNull undelivered_ViewHolder holder, int position) {
+        if (decision == 'B') {
+            holder.name_txt.setText("Seller Name:");
+            holder.phno_txt.setText("Seller Phone No:");
+        }
+        else {
+            holder.CANCEL.setVisibility(View.INVISIBLE);
+        }
         String mNameValue =Data.get(position).mNameValue;
         String mPhnoValue=Data.get(position).mPhnoValue;
         String mCropNameValue=Data.get(position).mCropNameValue;
@@ -48,13 +64,38 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
         holder.Weight_perItem.setText(mWeightValue+"");
         holder.Total_Quantity.setText(Total_Quantity+"");
         holder.Area.setText(mAreaValue);
-        if (decision == 'B') {
-            holder.name_txt.setText("Seller Name:");
-            holder.phno_txt.setText("Seller Phone No:");
-        }
-        else {
-            holder.CANCEL.setVisibility(View.INVISIBLE);
-        }
+        holder.CANCEL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.buyer_cancel_dialog);
+                dialog.setCanceledOnTouchOutside(false);
+                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                dialog.getWindow().getAttributes().windowAnimations = android.R.style.Animation_Dialog;
+                Button confirm,back;
+                confirm=dialog.findViewById(R.id.btn_confirm_cancel);
+                back=dialog.findViewById(R.id.btn_back);
+                confirm.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(context,"Delete",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(context,"Back",Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+
+
+                dialog.show();
+            }
+        });
+
     }
 
     @Override

@@ -10,6 +10,7 @@
     <color name="BLACK">#000000</color>
     <color name="back">#45FFFFFF</color>
     <color name="cancel">#E8FF0000</color>
+    <color name="back_blue">#1E88E5</color>
     <color name="Sold_progressBar">#30E100</color>
 
     <color name="Undel_progressBar">#A9CA33</color>

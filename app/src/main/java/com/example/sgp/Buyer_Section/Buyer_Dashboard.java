@@ -58,14 +58,14 @@ public class Buyer_Dashboard extends AppCompatActivity {
         dref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(new ArrayList<Database_Class>(0), 'B'));
+                recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(new ArrayList<Database_Class>(0), 'B',Buyer_Dashboard.this));
 
                 for (DataSnapshot dsnap : snapshot.getChildren()) {
                     Database_Class S = dsnap.getValue(Database_Class.class);
                     passing_Data_PendingCrop.add(S); // Log.d("Tag",S.mNameValue);
                 }
                 text_PendingOrders.setText(passing_Data_PendingCrop.size()+"");
-                recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(passing_Data_PendingCrop, 'B'));
+                recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(passing_Data_PendingCrop, 'B',Buyer_Dashboard.this));
 
             }
 
