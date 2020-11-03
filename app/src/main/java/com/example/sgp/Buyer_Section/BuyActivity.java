@@ -22,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 public class BuyActivity extends AppCompatActivity {
 
@@ -32,6 +33,7 @@ public class BuyActivity extends AppCompatActivity {
     Button buy_Btn;
     String MobileNo = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
     int OrderNo = 0;
+    String  Random=new Random().nextInt(100000)+"";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,7 +118,7 @@ public class BuyActivity extends AppCompatActivity {
                     SaveinRealTime(Data);
                     total_quantity -= Q;
                     ChangeinMainStocks(Key, total_quantity);
-                    ChangeInSeller(Data,Key);
+                    ChangeInSeller(Data);
                     RealTimeCleanUp(total_quantity, Key);
                     startActivity(new Intent(BuyActivity.this, BuyerSearchActivity.class));
 
@@ -143,12 +145,15 @@ public class BuyActivity extends AppCompatActivity {
 
     private void SaveinRealTime(Database_Class D) {
         FirebaseDatabase.getInstance().getReference("Data/" + MobileNo + "/Buyer/Pending/" + OrderNo).setValue(D);
+        FirebaseDatabase.getInstance().getReference("Data/" + MobileNo + "/Buyer/Pending/" + OrderNo+"/ID").setValue(Random);
         FirebaseDatabase.getInstance().getReference("Data/" + MobileNo + "/Buyer/nextOrderCounterB").setValue(String.valueOf(OrderNo + 1));
     }
 
-    void ChangeInSeller(Database_Class D,String key) {
-        String SMobile=D.mPhnoValue;
-        FirebaseDatabase.getInstance().getReference("Data/"+SMobile+"/Seller/Undelivered/"+key).setValue(D);
+    void ChangeInSeller(final Database_Class D) {
+        final String SMobile=D.mPhnoValue;
+
+        FirebaseDatabase.getInstance().getReference("Data/"+SMobile+"/Seller/Undelivered/"+Random).setValue(D);
+
     }
 
     private void GetOrderNumber() {

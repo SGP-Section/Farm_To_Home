@@ -2,6 +2,7 @@ package com.example.sgp.Buyer_Section;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,8 +35,10 @@ import java.util.ArrayList;
 public class Buyer_Dashboard extends AppCompatActivity {
     ArrayList<Database_Class> passing_Data_PendingCrop = new ArrayList<>(0);
     ArrayList<String > Key = new ArrayList<>(0);
+    ArrayList<String > ID = new ArrayList<>(0);
     private Button button_ProceedToBuy;
     private TextView text_PendingOrders;
+
 
     static void LoadFirebaseData_pendingCrop() {
 
@@ -60,16 +63,20 @@ public class Buyer_Dashboard extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Key.clear();
+                ID.clear();
+
                 passing_Data_PendingCrop.clear();
                 for (DataSnapshot dsnap : snapshot.getChildren()) {
                     Key.add(dsnap.getKey());
+                    Log.d("Tag", dsnap.child("ID").getValue().toString());
+
                     Database_Class S = dsnap.getValue(Database_Class.class);
                     int price =Integer.parseInt(S.mQuantityValue.toString())*Integer.parseInt(S.mPriceValue);
                     S.mPriceValue=price+"";
                     passing_Data_PendingCrop.add(S); // Log.d("Tag",S.mNameValue);
                 }
                 text_PendingOrders.setText(passing_Data_PendingCrop.size()+"");
-                recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(passing_Data_PendingCrop, Key,'B',Buyer_Dashboard.this));
+                recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(passing_Data_PendingCrop, Key,ID,'B',Buyer_Dashboard.this));
 
             }
 

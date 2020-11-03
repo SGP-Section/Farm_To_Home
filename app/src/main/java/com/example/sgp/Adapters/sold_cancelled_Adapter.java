@@ -38,8 +38,9 @@ public class sold_cancelled_Adapter extends RecyclerView.Adapter<sold_cancelled_
 //        String mQuantityValue=Data.get(position).mQuantityValue;
 //        String mWeightValue=Data.get(position).mWeightValue;
         int mQuantityValue=Integer.parseInt(Data.get(position).mQuantityValue);
-        int mWeightValue=Integer.parseInt(Data.get(position).mWeightValue);
-        String Total_Quantity=""+(mQuantityValue*mWeightValue);
+        double mWeightValue=Double.parseDouble(Data.get(position).mWeightValue);
+        String Total_Quantity=""+(int)(mQuantityValue*mWeightValue);
+        mPriceValue=String.valueOf(mQuantityValue*Integer.parseInt(mPriceValue));
         String mAreaValue=Data.get(position).mAreaValue;
         String mDateValue=Data.get(position).mDateValue;
         //-------------------------------------
