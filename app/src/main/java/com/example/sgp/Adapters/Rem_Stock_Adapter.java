@@ -62,7 +62,7 @@ public class Rem_Stock_Adapter extends RecyclerView.Adapter<Rem_Stock_Adapter.Re
             @Override
             public void onClick(View view) {
                 final Dialog dialog = new Dialog(context);
-                dialog.setContentView(R.layout.cancel_dialog);
+                dialog.setContentView(R.layout.dialog_screen);
                 TextView title=dialog.findViewById(R.id.cancel_title),sub=dialog.findViewById(R.id.cancel_sub);
                 title.setText("Cancel Stock");
                 sub.setText("Press Confirm to Cancel the Stock");

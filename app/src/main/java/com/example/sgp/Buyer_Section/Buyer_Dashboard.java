@@ -68,7 +68,8 @@ public class Buyer_Dashboard extends AppCompatActivity {
                 passing_Data_PendingCrop.clear();
                 for (DataSnapshot dsnap : snapshot.getChildren()) {
                     Key.add(dsnap.getKey());
-                    Log.d("Tag", dsnap.child("ID").getValue().toString());
+                    if(dsnap.child("ID").exists())
+                        ID.add(dsnap.child("ID").getValue().toString());
 
                     Database_Class S = dsnap.getValue(Database_Class.class);
                     int price =Integer.parseInt(S.mQuantityValue.toString())*Integer.parseInt(S.mPriceValue);

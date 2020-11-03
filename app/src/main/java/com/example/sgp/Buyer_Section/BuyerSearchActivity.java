@@ -36,6 +36,7 @@ public class BuyerSearchActivity extends AppCompatActivity {
     static ArrayList<Database_Class> mainCardList_Value;
     static ArrayList<String> mainCardList_Key;
     EditText Search_edtxt;
+    String MobileNo=FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
     private BuyerSearch_adapter data_adapter;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
@@ -66,6 +67,7 @@ public class BuyerSearchActivity extends AppCompatActivity {
                         mainCardList_Value.clear();
                         for (DataSnapshot dsnap : snapshot.getChildren()) {
                             Database_Class S = dsnap.getValue(Database_Class.class);
+                            if(S.mPhnoValue.compareTo(MobileNo)!=0)
                             mainCardList_Value.add(S);
                             mainCardList_Key.add(dsnap.getKey());
                             Log.d("Tag", dsnap.getKey() + "key: Search");

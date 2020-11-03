@@ -47,7 +47,7 @@ public class sold_cancelled_Adapter extends RecyclerView.Adapter<sold_cancelled_
         holder.bName.setText(mNameValue+"");
         holder.bPhno.setText(mPhnoValue+"");
         holder.cropName.setText(mCropNameValue+"");
-        holder.Price.setText(mPriceValue+"");
+        holder.Price.setText("₹ "+mPriceValue);
         holder.Quantity.setText(mQuantityValue+"");
         holder.Weight_perItem.setText(mWeightValue+"");
         holder.Total_Quantity.setText(Total_Quantity+"");
