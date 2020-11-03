@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
             //when internet is Active
             spin.setVisibility(View.VISIBLE);
-            new CountDownTimer(2000, 500) {
+            new CountDownTimer(1000, 500) {
                 @Override
                 public void onTick(long l) {
                 }

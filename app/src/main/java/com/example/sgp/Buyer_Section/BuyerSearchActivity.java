@@ -53,6 +53,8 @@ public class BuyerSearchActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Buyer Section");
 
         Search_edtxt=findViewById(R.id.buyer_search_editTXT);
+        recyclerView = findViewById(R.id.recyclerview_buyerSearch);
+
         mainCardList_Value = new ArrayList<>(0);
         mainCardList_Key = new ArrayList<>(0);
 
@@ -60,14 +62,16 @@ public class BuyerSearchActivity extends AppCompatActivity {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        mainCardList_Key.clear();
+                        mainCardList_Value.clear();
                         for (DataSnapshot dsnap : snapshot.getChildren()) {
                             Database_Class S = dsnap.getValue(Database_Class.class);
                             mainCardList_Value.add(S);
                             mainCardList_Key.add(dsnap.getKey());
                             Log.d("Tag", dsnap.getKey() + "key: Search");
-
-
                         }
+                        recyclerView.setAdapter(new BuyerSearch_adapter(BuyerSearchActivity.this, mainCardList_Value, mainCardList_Key));
+                        recyclerView.setLayoutManager(new LinearLayoutManager(BuyerSearchActivity.this));
                     }
 
                     @Override
@@ -75,9 +79,8 @@ public class BuyerSearchActivity extends AppCompatActivity {
 
                     }
                 });
-        recyclerView = findViewById(R.id.recyclerview_buyerSearch);
-        recyclerView.setAdapter(new BuyerSearch_adapter(BuyerSearchActivity.this, mainCardList_Value, mainCardList_Key));
-        recyclerView.setLayoutManager(new LinearLayoutManager(BuyerSearchActivity.this));
+
+
         Search_edtxt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

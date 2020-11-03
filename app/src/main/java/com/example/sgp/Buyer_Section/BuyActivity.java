@@ -1,7 +1,6 @@
 package com.example.sgp.Buyer_Section;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,10 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.sgp.Adapters.BuyerSearch_adapter;
 import com.example.sgp.Adapters.Database_Class;
-import com.example.sgp.Login_CreateAcc_Section.ApplicantDetails;
-import com.example.sgp.Login_CreateAcc_Section.OTP_Verification;
 import com.example.sgp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -63,7 +59,7 @@ public class BuyActivity extends AppCompatActivity {
         txt_name.setText(NameValue);
         txt_crop.setText(CropNameValue);
         txt_weight.setText(WeightValue);
-        txt_price.setText("₹ "+PriceValue);
+        txt_price.setText("₹ " + PriceValue);
         txt_area.setText(AreaValue);
 //        quantity = Integer.parseInt(txt_qua.getText().toString());
         double_total_price = quantity * double_price;
@@ -82,7 +78,7 @@ public class BuyActivity extends AppCompatActivity {
                 }
                 double_total_price = quantity * double_price;
                 txt_qua.setText(quantity + "");
-                txt_totalPrice.setText("₹ "+double_total_price );
+                txt_totalPrice.setText("₹ " + double_total_price);
 
 
             }
@@ -115,10 +111,12 @@ public class BuyActivity extends AppCompatActivity {
                 if (total_quantity <= 0)
                     Toast.makeText(BuyActivity.this, "Entered Quantity is Not Available", Toast.LENGTH_SHORT).show();
                 else {
+                    Database_Class Data = new Database_Class(NameValue, PhnoValue, CropNameValue, PriceValue, QuantityValue, WeightValue, AreaValue, DateValue);
                     GetOrderNumber();
-                    SaveinRealTime(new Database_Class(NameValue, PhnoValue, CropNameValue, PriceValue, QuantityValue, WeightValue, AreaValue, DateValue));
+                    SaveinRealTime(Data);
                     total_quantity -= Q;
                     ChangeinMainStocks(Key, total_quantity);
+                    ChangeInSeller(Data,Key);
                     RealTimeCleanUp(total_quantity, Key);
                     startActivity(new Intent(BuyActivity.this, BuyerSearchActivity.class));
 
@@ -132,7 +130,7 @@ public class BuyActivity extends AppCompatActivity {
     void RealTimeCleanUp(int Tquantity, String key) {
         if (Tquantity == 0) {
             FirebaseDatabase.getInstance().getReference("Main Stock/Orders/" + key).removeValue();
-            Intent intent =new Intent(BuyActivity.this, BuyerSearchActivity.class);
+            Intent intent = new Intent(BuyActivity.this, BuyerSearchActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             Toast.makeText(BuyActivity.this, "Stock ", Toast.LENGTH_SHORT).show();
@@ -146,6 +144,11 @@ public class BuyActivity extends AppCompatActivity {
     private void SaveinRealTime(Database_Class D) {
         FirebaseDatabase.getInstance().getReference("Data/" + MobileNo + "/Buyer/Pending/" + OrderNo).setValue(D);
         FirebaseDatabase.getInstance().getReference("Data/" + MobileNo + "/Buyer/nextOrderCounterB").setValue(String.valueOf(OrderNo + 1));
+    }
+
+    void ChangeInSeller(Database_Class D,String key) {
+        String SMobile=D.mPhnoValue;
+        FirebaseDatabase.getInstance().getReference("Data/"+SMobile+"/Seller/Undelivered/"+key).setValue(D);
     }
 
     private void GetOrderNumber() {
