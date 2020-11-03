@@ -32,7 +32,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class Buyer_Dashboard extends AppCompatActivity {
-    ArrayList<Database_Class> passing_Data_PendingCrop = new ArrayList<Database_Class>(0);
+    ArrayList<Database_Class> passing_Data_PendingCrop = new ArrayList<>(0);
+    ArrayList<String > Key = new ArrayList<>(0);
     private Button button_ProceedToBuy;
     private TextView text_PendingOrders;
 
@@ -53,19 +54,22 @@ public class Buyer_Dashboard extends AppCompatActivity {
         final RecyclerView recyclerView = findViewById(R.id.recyclerview_pendingCrops);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         String MobileNo = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
-        DatabaseReference dref = FirebaseDatabase.getInstance().getReference("Data/" + MobileNo + "/Buyer/Pending");
+        final DatabaseReference dref = FirebaseDatabase.getInstance().getReference("Data/" + MobileNo + "/Buyer/Pending");
 
         dref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(new ArrayList<Database_Class>(0), 'B',Buyer_Dashboard.this));
-
+                Key.clear();
+                passing_Data_PendingCrop.clear();
                 for (DataSnapshot dsnap : snapshot.getChildren()) {
+                    Key.add(dsnap.getKey());
                     Database_Class S = dsnap.getValue(Database_Class.class);
+                    int price =Integer.parseInt(S.mQuantityValue.toString())*Integer.parseInt(S.mPriceValue);
+                    S.mPriceValue=price+"";
                     passing_Data_PendingCrop.add(S); // Log.d("Tag",S.mNameValue);
                 }
                 text_PendingOrders.setText(passing_Data_PendingCrop.size()+"");
-                recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(passing_Data_PendingCrop, 'B',Buyer_Dashboard.this));
+                recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(passing_Data_PendingCrop, Key,'B',Buyer_Dashboard.this));
 
             }
 

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,20 +16,24 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.sgp.Buyer_Section.Buyer_Dashboard;
 import com.example.sgp.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undelivered_BuyerPending_Adapter.undelivered_ViewHolder> {
-    ArrayList<Database_Class> Data = new ArrayList<Database_Class>(0);
+    ArrayList<Database_Class> Data = new ArrayList<>(0);
+    ArrayList<String> key = new ArrayList<>(0);
+    String MobileNo = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
     char decision;
     Context context;
 
-    public undelivered_BuyerPending_Adapter(ArrayList<Database_Class> data, char decision, Context context) {
+    public undelivered_BuyerPending_Adapter(ArrayList<Database_Class> data, ArrayList<String> Key, char decision, Context context) {
         this.decision = decision;
         this.Data = data;
-        this.context=context;
+        this.key = Key;
+        this.context = context;
     }
 
     @Override
@@ -39,58 +44,61 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
     }
 
     @Override
-    public void onBindViewHolder(@NonNull undelivered_ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final undelivered_ViewHolder holder, final int position) {
         if (decision == 'B') {
             holder.name_txt.setText("Seller Name:");
             holder.phno_txt.setText("Seller Phone No:");
-        }
-        else {
+        } else {
             holder.CANCEL.setVisibility(View.INVISIBLE);
         }
-        String mNameValue =Data.get(position).mNameValue;
-        String mPhnoValue=Data.get(position).mPhnoValue;
-        String mCropNameValue=Data.get(position).mCropNameValue;
-        String mPriceValue=Data.get(position).mPriceValue;
+        String mNameValue = Data.get(position).mNameValue;
+        String mPhnoValue = Data.get(position).mPhnoValue;
+        String mCropNameValue = Data.get(position).mCropNameValue;
+        String mPriceValue = Data.get(position).mPriceValue;
         int mQuantityValue = Integer.parseInt(Data.get(position).mQuantityValue);
         double mWeightValue = Double.parseDouble(Data.get(position).mWeightValue);
         String Total_Quantity = "" + (mQuantityValue * mWeightValue);
-        String mAreaValue=Data.get(position).mAreaValue;
+        String mAreaValue = Data.get(position).mAreaValue;
         //-------------------------------------
         holder.bName.setText(mNameValue);
         holder.bPhno.setText(mPhnoValue);
         holder.cropName.setText(mCropNameValue);
         holder.Price.setText(mPriceValue);
-        holder.Quantity.setText(mQuantityValue+"");
-        holder.Weight_perItem.setText(mWeightValue+"");
-        holder.Total_Quantity.setText(Total_Quantity+"");
+        holder.Quantity.setText(mQuantityValue + "");
+        holder.Weight_perItem.setText(mWeightValue + "");
+        holder.Total_Quantity.setText(Total_Quantity + "");
         holder.Area.setText(mAreaValue);
         holder.CANCEL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dialog dialog = new Dialog(context);
+                final Dialog dialog = new Dialog(context);
                 dialog.setContentView(R.layout.buyer_cancel_dialog);
                 dialog.setCanceledOnTouchOutside(false);
                 dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
                 dialog.getWindow().getAttributes().windowAnimations = android.R.style.Animation_Dialog;
-                Button confirm,back;
-                confirm=dialog.findViewById(R.id.btn_confirm_cancel);
-                back=dialog.findViewById(R.id.btn_back);
+                final Button confirm, back;
+                confirm = dialog.findViewById(R.id.btn_confirm_cancel);
+                back = dialog.findViewById(R.id.btn_back);
+                Log.d("Tag", key.get(position));
+
                 confirm.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(context,"Delete",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Order Deleted", Toast.LENGTH_SHORT).show();
+                        FirebaseDatabase.getInstance().getReference("Data/" + MobileNo + "/Buyer/Pending/" + key.get(position)).removeValue();
+                        dialog.dismiss();
+                        notifyItemRemoved(position);
+
+
                     }
                 });
                 back.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(context,"Back",Toast.LENGTH_SHORT).show();
-
+                        dialog.dismiss();
                     }
                 });
-
-
 
                 dialog.show();
             }
@@ -106,6 +114,7 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
     public class undelivered_ViewHolder extends RecyclerView.ViewHolder {
         TextView bName, bPhno, cropName, Price, Quantity, Weight_perItem, Total_Quantity, Area, name_txt, phno_txt;
         Button CANCEL;
+
         public undelivered_ViewHolder(@NonNull View itemView) {
             super(itemView);
             bName = itemView.findViewById(R.id.value_buyer_name_undel);
@@ -119,8 +128,7 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
             name_txt = itemView.findViewById(R.id.txt_buyer_name);
             phno_txt = itemView.findViewById(R.id.txt_buyer_phno);
 
-            CANCEL=itemView.findViewById(R.id.btn_cancel_undeli_pending);
-
+            CANCEL = itemView.findViewById(R.id.btn_cancel_undeli_pending);
 
 
         }
