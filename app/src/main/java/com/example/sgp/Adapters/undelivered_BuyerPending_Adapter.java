@@ -115,7 +115,7 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
 
     public class undelivered_ViewHolder extends RecyclerView.ViewHolder {
         TextView bName, bPhno, cropName, Price, Quantity, Weight_perItem, Total_Quantity, Area, name_txt, phno_txt;
-        ImageButton CANCEL,Delivered;
+        Button CANCEL,Delivered;
 
         public undelivered_ViewHolder(@NonNull View itemView) {
             super(itemView);
