@@ -34,17 +34,17 @@ import java.util.ArrayList;
 
 public class BuyerSearchActivity extends AppCompatActivity {
     static ArrayList<Database_Class> mainCardList_Value;
+    static ArrayList<String> mainCardList_Key;
+    EditText Search_edtxt;
+    private BuyerSearch_adapter data_adapter;
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(this,Buyer_Dashboard.class));
+        startActivity(new Intent(this, Buyer_Dashboard.class));
     }
-      static ArrayList<String> mainCardList_Key;
-    private BuyerSearch_adapter data_adapter;
-    private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
-    EditText Search_edtxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class BuyerSearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_buyer_search);
         getSupportActionBar().setTitle("Buyer Section");
 
-        Search_edtxt=findViewById(R.id.buyer_search_editTXT);
+        Search_edtxt = findViewById(R.id.buyer_search_editTXT);
         recyclerView = findViewById(R.id.recyclerview_buyerSearch);
 
         mainCardList_Value = new ArrayList<>(0);
@@ -126,8 +126,10 @@ public class BuyerSearchActivity extends AppCompatActivity {
                             mainCardList_Key.add(dsnap.getKey());
                             Log.d("Tag", dsnap.getKey() + "key: Search");
 
-
                         }
+                        recyclerView = findViewById(R.id.recyclerview_buyerSearch);
+                        recyclerView.setAdapter(new BuyerSearch_adapter(BuyerSearchActivity.this, mainCardList_Value, mainCardList_Key));
+                        recyclerView.setLayoutManager(new LinearLayoutManager(BuyerSearchActivity.this));
                     }
 
                     @Override
@@ -135,9 +137,7 @@ public class BuyerSearchActivity extends AppCompatActivity {
 
                     }
                 });
-        recyclerView = findViewById(R.id.recyclerview_buyerSearch);
-        recyclerView.setAdapter(new BuyerSearch_adapter(BuyerSearchActivity.this, mainCardList_Value, mainCardList_Key));
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         // recyclerView.setHasFixedSize(true);
 
     }
