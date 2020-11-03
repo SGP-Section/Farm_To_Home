@@ -30,7 +30,8 @@ import java.util.ArrayList;
 
 public class Manage_Stock_Activity extends AppCompatActivity {
     final String MobileNo = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
-    ArrayList<Database_Class> RemStockData;
+    ArrayList<Database_Class> RemStockData =new ArrayList<>(0);
+    ArrayList<String> Key=new ArrayList<>(0);
     RecyclerView recyclerView;
 
     @Override
@@ -46,7 +47,10 @@ public class Manage_Stock_Activity extends AppCompatActivity {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        RemStockData.clear();
+                        Key.clear();
                         for (DataSnapshot dsnap : snapshot.getChildren()) {
+                            Key.add(dsnap.getKey());
                             Database_Class D = dsnap.getValue(Database_Class.class);
                             if (MobileNo.compareTo(D.mPhnoValue) == 0) {
                                 RemStockData.add(D);
@@ -54,7 +58,7 @@ public class Manage_Stock_Activity extends AppCompatActivity {
                             Log.d("Tag",D.mPhnoValue);
 
                         }
-                        recyclerView.setAdapter(new Rem_Stock_Adapter(RemStockData));
+                        recyclerView.setAdapter(new Rem_Stock_Adapter(RemStockData,Key,Manage_Stock_Activity.this));
 
                     }
 

@@ -72,7 +72,7 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
             @Override
             public void onClick(View view) {
                 final Dialog dialog = new Dialog(context);
-                dialog.setContentView(R.layout.buyer_cancel_dialog);
+                dialog.setContentView(R.layout.cancel_dialog);
                 dialog.setCanceledOnTouchOutside(false);
                 dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));

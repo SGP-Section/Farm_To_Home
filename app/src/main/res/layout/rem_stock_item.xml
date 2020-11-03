@@ -117,17 +117,19 @@
                 android:text="00kg"
                 android:textColor="#151515"
                 android:textSize="20sp" />
+        </LinearLayout>
+
 
             <Button
                 android:id="@+id/cancel_rem_stock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/cancel_format"
+                android:layout_gravity="right"
+                android:layout_marginEnd="20dp"
                 android:text="Cancel"
-                android:textColor="#151515"
-                android:textSize="15dp"
-              />
-        </LinearLayout>
+                android:textColor="@color/BLACK"
+                android:textSize="15dp" />
 
 
     </LinearLayout>
