@@ -78,21 +78,20 @@ public class Rem_Stock_Adapter extends RecyclerView.Adapter<Rem_Stock_Adapter.Re
                 confirm.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(context, "Order Deleted", Toast.LENGTH_SHORT).show();
                         FirebaseDatabase.getInstance().getReference("Main Stock/Orders/" + Key.get(position)).removeValue();
                         dialog.dismiss();
                         notifyItemRemoved(position);
+                        Toast.makeText(context, "Order Deleted", Toast.LENGTH_SHORT).show();
+
                     }
                 });
                 back.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Toast.makeText(context, "Back", Toast.LENGTH_SHORT).show();
-
                         dialog.dismiss();
                     }
                 });
-
                 dialog.show();
             }
         });

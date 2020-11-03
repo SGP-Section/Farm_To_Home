@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,6 +51,7 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
             holder.phno_txt.setText("Seller Phone No:");
         } else {
             holder.CANCEL.setVisibility(View.INVISIBLE);
+            holder.Delivered.setVisibility(View.INVISIBLE);
         }
         String mNameValue = Data.get(position).mNameValue;
         String mPhnoValue = Data.get(position).mPhnoValue;
@@ -113,7 +115,7 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
 
     public class undelivered_ViewHolder extends RecyclerView.ViewHolder {
         TextView bName, bPhno, cropName, Price, Quantity, Weight_perItem, Total_Quantity, Area, name_txt, phno_txt;
-        Button CANCEL;
+        ImageButton CANCEL,Delivered;
 
         public undelivered_ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -129,6 +131,7 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
             phno_txt = itemView.findViewById(R.id.txt_buyer_phno);
 
             CANCEL = itemView.findViewById(R.id.btn_cancel_undeli_pending);
+            Delivered=itemView.findViewById(R.id.btn_del_undeli_pending);
 
 
         }
