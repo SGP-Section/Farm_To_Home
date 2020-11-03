@@ -73,12 +73,12 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 quantity = Integer.parseInt(txt_qua.getText().toString());
-                if (quantity <= total_quantity)
+                if (quantity < total_quantity)
                     quantity++;
                 else
-                    Toast.makeText(BuyActivity.this, quantity + " is Max Quantity Availible", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BuyActivity.this, quantity + " is Max Quantity Available", Toast.LENGTH_SHORT).show();
                 if (total_quantity == 0) {
-                    Toast.makeText(BuyActivity.this, "No Stock Is Availible", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BuyActivity.this, "No Stock Is Available", Toast.LENGTH_SHORT).show();
                 }
                 double_total_price = quantity * double_price;
                 txt_qua.setText(quantity + "");
