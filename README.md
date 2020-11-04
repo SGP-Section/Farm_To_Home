@@ -1,4 +1,4 @@
-# SGP_Project_Sem3
+# Online_Crop_Selling_PlatForm
 Online Crop Selling Platform
 This is Student Group Project(SGP) of
 1. Charmi P. Patel (19IT088)
