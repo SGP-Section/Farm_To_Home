@@ -53,7 +53,7 @@ public class Buyer_Dashboard extends AppCompatActivity {
         button_ProceedToBuy = findViewById(R.id.btn_ProceedToBuy);
         text_PendingOrders = findViewById(R.id.txt_PendingOrderNumber);
 
-        Context context=findViewById(R.id.view_empty).getContext();
+
         final RecyclerView recyclerView = findViewById(R.id.recyclerview_pendingCrops);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         String MobileNo = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
