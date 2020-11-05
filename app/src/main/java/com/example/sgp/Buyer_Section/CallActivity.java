@@ -42,7 +42,6 @@ public class CallActivity extends AppCompatActivity {
                 Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
             }
         }
-
     }
 
     private void makePhoneCall(String phoneNumber) {

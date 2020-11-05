@@ -90,7 +90,7 @@ public class Sell_Confirm extends AppCompatActivity {
             public void onClick(View view) {
                 getOrderNumber();
                 Updating_RealtimeDatabase(D_passing);
-                Toast.makeText(Sell_Confirm.this, "Confirm selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Sell_Confirm.this, "Stock Details Uploaded", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Sell_Confirm.this, Sell_Activity.class));
 
             }
@@ -104,8 +104,9 @@ public class Sell_Confirm extends AppCompatActivity {
 
                 Intent intent = new Intent(Sell_Confirm.this, Seller_Dashboard.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                Toast.makeText(Sell_Confirm.this, "Stock Details Uploaded", Toast.LENGTH_SHORT).show();
+
                 startActivity(intent);
-                Toast.makeText(Sell_Confirm.this, "Confirm selected", Toast.LENGTH_LONG).show();
 
             }
         });

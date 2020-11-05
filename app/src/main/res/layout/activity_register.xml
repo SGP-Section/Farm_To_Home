@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="44dp"
-            android:background="#95C86A"
+            android:background="@drawable/normal_btn_format"
             android:backgroundTint="#599F47"
             android:fontFamily="@font/coustard"
             android:padding="10dp"

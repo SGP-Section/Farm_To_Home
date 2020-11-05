@@ -66,6 +66,7 @@ public class BuyerSearch_adapter extends RecyclerView.Adapter<BuyerSearch_adapte
         holder.CropNameValue.setText(CropNameValue);
         holder.QuantityValue.setText(QuantityValue);
         holder.WeightValue.setText(WeightValue);
+        holder.PriceValue.setText("₹ "+PriceValue);
         holder.AreaValue.setText(AreaValue);
         holder.to_buy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,7 +100,7 @@ public class BuyerSearch_adapter extends RecyclerView.Adapter<BuyerSearch_adapte
 
     public static class Buyer_ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView SellerNameValue, SellerPhno, CropNameValue, QuantityValue, WeightValue, AreaValue;
+        TextView SellerNameValue, SellerPhno, CropNameValue,PriceValue ,QuantityValue, WeightValue, AreaValue;
         ImageButton to_buy,call_btn;
 
         public Buyer_ViewHolder(@NonNull final View itemView) {
@@ -111,6 +112,7 @@ public class BuyerSearch_adapter extends RecyclerView.Adapter<BuyerSearch_adapte
             QuantityValue = itemView.findViewById(R.id.txt_quantity_value);
             WeightValue = itemView.findViewById(R.id.txt_weight_value);
             AreaValue = itemView.findViewById(R.id.txt_area_value);
+            PriceValue=itemView.findViewById(R.id.txt_price_value);
             to_buy = itemView.findViewById(R.id.To_Buy_btn);
             call_btn = itemView.findViewById(R.id.callButton);
 
