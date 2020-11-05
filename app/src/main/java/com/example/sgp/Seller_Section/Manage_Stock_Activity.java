@@ -1,11 +1,18 @@
 package com.example.sgp.Seller_Section;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -13,8 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.sgp.Adapters.Rem_Stock_Adapter;
 import com.example.sgp.Adapters.Database_Class;
+import com.example.sgp.Adapters.Rem_Stock_Adapter;
 import com.example.sgp.Buyer_Section.Buyer_Dashboard;
 import com.example.sgp.Dashboard;
 import com.example.sgp.MainActivity;
@@ -30,8 +37,8 @@ import java.util.ArrayList;
 
 public class Manage_Stock_Activity extends AppCompatActivity {
     final String MobileNo = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
-    ArrayList<Database_Class> RemStockData =new ArrayList<>(0);
-    ArrayList<String> Key=new ArrayList<>(0);
+    ArrayList<Database_Class> RemStockData = new ArrayList<>(0);
+    ArrayList<String> Key = new ArrayList<>(0);
     RecyclerView recyclerView;
 
     @Override
@@ -50,15 +57,41 @@ public class Manage_Stock_Activity extends AppCompatActivity {
                         RemStockData.clear();
                         Key.clear();
                         for (DataSnapshot dsnap : snapshot.getChildren()) {
-                            Key.add(dsnap.getKey());
                             Database_Class D = dsnap.getValue(Database_Class.class);
                             if (MobileNo.compareTo(D.mPhnoValue) == 0) {
+                                Key.add(dsnap.getKey());
                                 RemStockData.add(D);
-                            }
-                            Log.d("Tag",D.mPhnoValue);
+                                Log.d("Tag", D.mPhnoValue + dsnap.getValue());
 
+                            }
                         }
-                        recyclerView.setAdapter(new Rem_Stock_Adapter(RemStockData,Key,Manage_Stock_Activity.this));
+                        if(!RemStockData.isEmpty())
+                        recyclerView.setAdapter(new Rem_Stock_Adapter(RemStockData, Key, Manage_Stock_Activity.this));
+                        else {
+                            final Dialog dialog = new Dialog(Manage_Stock_Activity.this);
+                            dialog.setContentView(R.layout.empty_dialog_screen);
+                            dialog.setCanceledOnTouchOutside(false);
+                            dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                            dialog.getWindow().getAttributes().windowAnimations = android.R.style.Animation_Dialog;
+                            TextView title;
+                            title = dialog.findViewById(R.id.empty_title);
+                            title.setText("NO DATA Found!");
+                            final Button confirm, back;
+                            confirm = dialog.findViewById(R.id.btn_confirm_cancel);
+                            back = dialog.findViewById(R.id.btn_back_empty);
+                            back.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    finish();
+                                    dialog.dismiss();
+
+
+                                }
+                            });
+
+                            dialog.show();
+                        }
 
                     }
 

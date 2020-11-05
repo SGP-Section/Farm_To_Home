@@ -1,12 +1,16 @@
 package com.example.sgp.Buyer_Section;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,26 +38,22 @@ import java.util.ArrayList;
 
 public class Buyer_Dashboard extends AppCompatActivity {
     ArrayList<Database_Class> passing_Data_PendingCrop = new ArrayList<>(0);
-    ArrayList<String > Key = new ArrayList<>(0);
-    ArrayList<String > ID = new ArrayList<>(0);
+    ArrayList<String> Key = new ArrayList<>(0);
+    ArrayList<String> ID = new ArrayList<>(0);
     private Button button_ProceedToBuy;
     private TextView text_PendingOrders;
 
 
-    static void LoadFirebaseData_pendingCrop() {
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buyer_dashboard);
         getSupportActionBar().setTitle("Buyer Section");
-                button_ProceedToBuy = findViewById(R.id.btn_ProceedToBuy);
+        button_ProceedToBuy = findViewById(R.id.btn_ProceedToBuy);
         text_PendingOrders = findViewById(R.id.txt_PendingOrderNumber);
 
-
-
+        Context context=findViewById(R.id.view_empty).getContext();
         final RecyclerView recyclerView = findViewById(R.id.recyclerview_pendingCrops);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         String MobileNo = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
@@ -68,16 +68,17 @@ public class Buyer_Dashboard extends AppCompatActivity {
                 passing_Data_PendingCrop.clear();
                 for (DataSnapshot dsnap : snapshot.getChildren()) {
                     Key.add(dsnap.getKey());
-                    if(dsnap.child("ID").exists())
+                    if (dsnap.child("ID").exists())
                         ID.add(dsnap.child("ID").getValue().toString());
 
                     Database_Class S = dsnap.getValue(Database_Class.class);
-                    int price =Integer.parseInt(S.mQuantityValue.toString())*Integer.parseInt(S.mPriceValue);
-                    S.mPriceValue=price+"";
+                    int price = Integer.parseInt(S.mQuantityValue) * Integer.parseInt(S.mPriceValue);
+                    S.mPriceValue = price + "";
                     passing_Data_PendingCrop.add(S); // Log.d("Tag",S.mNameValue);
                 }
-                text_PendingOrders.setText(passing_Data_PendingCrop.size()+"");
-                recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(passing_Data_PendingCrop, Key,ID,'B',Buyer_Dashboard.this));
+                    text_PendingOrders.setText(passing_Data_PendingCrop.size() + "");
+                    recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(passing_Data_PendingCrop, Key, ID, 'B', Buyer_Dashboard.this));
+
 
             }
 
@@ -127,6 +128,7 @@ public class Buyer_Dashboard extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -138,7 +140,7 @@ public class Buyer_Dashboard extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(this,Dashboard.class));
+        startActivity(new Intent(this, Dashboard.class));
     }
 
 }
