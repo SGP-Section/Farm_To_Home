@@ -140,10 +140,9 @@
 
             <ImageButton
                 android:id="@+id/set_buy_dec"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_indeterminate_check_box_24" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_baseline_indeterminate_check_box_24"/>
 
             <TextView
                 android:id="@+id/set_buy_quantity"
@@ -159,9 +158,9 @@
             <ImageButton
                 android:id="@+id/set_buy_inc"
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_add" />
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_baseline_add" />
 
         </LinearLayout>
 

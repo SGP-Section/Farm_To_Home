@@ -4,8 +4,9 @@
     <solid android:color="@color/RecyclerBKG"/>
     <corners android:bottomLeftRadius="20dp" android:bottomRightRadius="20dp"
         android:topLeftRadius="5dp" android:topRightRadius="5dp"/>
-    <stroke android:width="2dp" android:color="@color/BLACK"/>
-
+    <stroke
+        android:width="@dimen/shadowborderWidth"
+        android:color="@color/Border" />
 
 
 </shape>
