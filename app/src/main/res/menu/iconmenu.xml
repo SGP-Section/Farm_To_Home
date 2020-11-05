@@ -23,6 +23,17 @@
         android:title="Account"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/feedback_menu_item"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Feedback"
+        app:showAsAction="never"/>
+
+  <item
+      android:id="@+id/ContactUs_menu_item"
+      android:icon="@drawable/ic_baseline_account_circle_24"
+      android:title="Contact us"
+      app:showAsAction="never"/>
 
     <item android:id="@+id/logout_menu_item"
         android:icon="@drawable/ic_baseline_logout"

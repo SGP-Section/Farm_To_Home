@@ -10,14 +10,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sgp.Adapters.Database_Class;
 import com.example.sgp.Buyer_Section.Buyer_Dashboard;
+import com.example.sgp.OptionMenu.ContactUs;
 import com.example.sgp.Dashboard;
+import com.example.sgp.OptionMenu.Feedback;
 import com.example.sgp.MainActivity;
 import com.example.sgp.OptionMenu.AccountActivity;
 import com.example.sgp.R;
@@ -226,18 +227,19 @@ public class Seller_Dashboard extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.seller_menu_item:
-                Toast.makeText(this, "Seller Selected", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, Seller_Dashboard.class));
                 break;
             case R.id.buyer_menu_item:
-                Toast.makeText(this, "Buyer Selected", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, Buyer_Dashboard.class));
-
                 break;
             case R.id.home_menu_item:
-                Toast.makeText(this, "Home Selected", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, Dashboard.class));
-
+                break;
+            case R.id.ContactUs_menu_item:
+                startActivity(new Intent(this, ContactUs.class));
+                break;
+            case R.id.feedback_menu_item:
+                startActivity(new Intent(this, Feedback.class));
                 break;
             case R.id.account_menu_item:
                 Intent intent1 = new Intent(this, AccountActivity.class);

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sgp">
 
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +11,8 @@
         android:roundIcon="@drawable/ic_logo_main_bkg"
         android:supportsRtl="true"
         android:theme="@style/AppTheme_Custom">
+        <activity android:name=".OptionMenu.Feedback"></activity>
+        <activity android:name=".OptionMenu.ContactUs" />
         <activity android:name=".Buyer_Section.CallActivity" />
         <activity
             android:name=".OptionMenu.EditActivity"
