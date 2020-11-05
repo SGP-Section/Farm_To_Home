@@ -111,7 +111,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text=" Weight per 1 Quantity : "
+                android:text="Weight per 1 Quantity : "
                 android:textColor="@color/Sub_FontColor"
             android:textSize="25dp" />
 
@@ -135,32 +135,46 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Quantity : "
+                android:gravity="center"
                 android:textColor="@color/Sub_FontColor"
             android:textSize="25dp" />
 
             <ImageButton
                 android:id="@+id/set_buy_dec"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/ic_baseline_indeterminate_check_box_24"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_remove_circle_24"/>
 
             <TextView
                 android:id="@+id/set_buy_quantity"
 
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:gravity="center"
+                android:paddingLeft="2dp"
                 android:text="0"
+                android:paddingRight="2dp"
                 android:textColor="@color/Sub_FontColor"
             android:textSize="25dp" />
 
             <ImageButton
                 android:id="@+id/set_buy_inc"
 
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/ic_baseline_add" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_add_circle_24" />
+
+            <TextView
+                android:id="@+id/set_max_quantity"
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="[Max Qua]"
+                android:textColor="@color/Sub_FontColor"
+                android:textSize="20dp" />
 
         </LinearLayout>
 

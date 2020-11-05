@@ -28,7 +28,7 @@ public class BuyActivity extends AppCompatActivity {
 
     double double_price, double_weight, double_total_price;
     int quantity, total_quantity;
-    TextView txt_name, txt_crop, txt_weight, txt_qua, txt_price, txt_totalPrice, txt_area;
+    TextView txt_name, txt_crop, txt_weight, txt_qua, txt_price, txt_totalPrice, txt_area,txt_max_qua;
     ImageButton increaseQua, decreaseQua;
     Button buy_Btn;
     String MobileNo = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
@@ -61,6 +61,7 @@ public class BuyActivity extends AppCompatActivity {
         txt_name.setText(NameValue);
         txt_crop.setText(CropNameValue);
         txt_weight.setText(WeightValue);
+        txt_max_qua.setText("[Max:"+total_quantity+"]");
         txt_price.setText("₹ " + PriceValue);
         txt_area.setText(AreaValue);
 //        quantity = Integer.parseInt(txt_qua.getText().toString());
@@ -186,6 +187,7 @@ public class BuyActivity extends AppCompatActivity {
         txt_totalPrice = findViewById(R.id.set_buy_totalprice);
         txt_area = findViewById(R.id.set_buy_area);
         buy_Btn = findViewById(R.id.set_buy_btn);
+        txt_max_qua=findViewById(R.id.set_max_quantity);
     }
 
 }
