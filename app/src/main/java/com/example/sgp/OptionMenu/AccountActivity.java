@@ -14,6 +14,7 @@ import com.example.sgp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -22,13 +23,14 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class AccountActivity extends AppCompatActivity {
     String phone = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
 
-    private TextView txtNAme,txtPreArea,txtResArea,txtDob,txtUserName;
+    private TextView txtNAme,txtPreArea,txtResArea,txtDob,txtUserName,txtMobile;
     private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
+        txtMobile=findViewById(R.id.MobileNo);
         txtDob = findViewById(R.id.txt_EditDOB);
         txtNAme = findViewById(R.id.txt_EditName);
         txtPreArea = findViewById(R.id.txt_EditPreferredArea);
@@ -51,6 +53,7 @@ public class AccountActivity extends AppCompatActivity {
                             txtResArea.setText(documentSnapshot.getString("Residing Area"));
                             String userNAme = "Hello , "+ documentSnapshot.getString("name");
                             txtUserName.setText(userNAme);
+                            txtMobile.append(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber());
 
                         }
                         else{

@@ -73,7 +73,8 @@ public class Seller_Statistics_Activity extends AppCompatActivity {
                             break;
                         case 'U':
                             //getSupportActionBar().setTitle("Undelivered");
-                            recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(passing_Data_SellerStat, null, null, 'U', Seller_Statistics_Activity.this));
+                            ArrayList<String> NULL=new ArrayList<>(0);
+                            recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(passing_Data_SellerStat, NULL,NULL, 'U', Seller_Statistics_Activity.this));
                             break;
                         case 'C':
                             //getSupportActionBar().setTitle("Cancelled");

@@ -16,8 +16,9 @@ import com.example.sgp.R;
 
 public class CallActivity extends AppCompatActivity {
 
-    private static final int REQUEST_CALL=1;
     String ph;
+
+    private static final int REQUEST_CALL=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class CallActivity extends AppCompatActivity {
         ph = getIntent().getStringExtra("PhNoValue");
 
         makePhoneCall(ph);
+        finish();
 
     }
 

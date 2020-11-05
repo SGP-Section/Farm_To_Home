@@ -15,8 +15,8 @@
         android:padding="10dp">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:layout_marginTop="40dp"
@@ -33,6 +33,17 @@
             android:textColor="@color/Main_FontColor"
 
             android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/MobileNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:text="Mobile:  "
+            android:textColor="@color/Main_FontColor"
+
+            android:textSize="25dp" />
 
     </LinearLayout>
 

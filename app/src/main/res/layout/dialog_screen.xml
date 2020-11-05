@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="20dp">
 
     <TextView
         android:id="@+id/cancel_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="120dp"
         android:fontFamily="monospace"
         android:text="Cancel Order ?"
+        android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/BLACK"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/cancel_sub"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/cancel_title"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="50dp"
         android:fontFamily="serif"
@@ -32,7 +34,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
@@ -58,4 +61,4 @@
             android:textColor="#2E2929"
             android:textStyle="bold" />
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

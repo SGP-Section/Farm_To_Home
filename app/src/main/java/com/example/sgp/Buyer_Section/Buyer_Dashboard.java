@@ -2,6 +2,7 @@ package com.example.sgp.Buyer_Section;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,11 +17,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sgp.Adapters.Database_Class;
 import com.example.sgp.Adapters.undelivered_BuyerPending_Adapter;
-import com.example.sgp.OptionMenu.ContactUs;
 import com.example.sgp.Dashboard;
-import com.example.sgp.OptionMenu.Feedback;
 import com.example.sgp.MainActivity;
 import com.example.sgp.OptionMenu.AccountActivity;
+import com.example.sgp.OptionMenu.ContactUs;
+import com.example.sgp.OptionMenu.Feedback;
 import com.example.sgp.R;
 import com.example.sgp.Seller_Section.Seller_Dashboard;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,7 +39,6 @@ public class Buyer_Dashboard extends AppCompatActivity {
     ArrayList<String> ID = new ArrayList<>(0);
     private Button button_ProceedToBuy;
     private TextView text_PendingOrders;
-
 
 
     @Override
@@ -61,19 +61,23 @@ public class Buyer_Dashboard extends AppCompatActivity {
                 Key.clear();
                 ID.clear();
 
-                passing_Data_PendingCrop.clear();
+                passing_Data_PendingCrop.removeAll(passing_Data_PendingCrop);
                 for (DataSnapshot dsnap : snapshot.getChildren()) {
                     Key.add(dsnap.getKey());
-                    if (dsnap.child("ID").exists())
-                        ID.add(dsnap.child("ID").getValue().toString());
+                    if (dsnap.child("ID").exists()) {
+                        String s = dsnap.child("ID").getValue().toString();
+                        ID.add(s);
+                        Log.d("Tag", "Key:"+s);
+
+                    }
 
                     Database_Class S = dsnap.getValue(Database_Class.class);
                     int price = Integer.parseInt(S.mQuantityValue) * Integer.parseInt(S.mPriceValue);
                     S.mPriceValue = price + "";
                     passing_Data_PendingCrop.add(S); // Log.d("Tag",S.mNameValue);
                 }
-                    text_PendingOrders.setText(passing_Data_PendingCrop.size() + "");
-                    recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(passing_Data_PendingCrop, Key, ID, 'B', Buyer_Dashboard.this));
+                text_PendingOrders.setText(passing_Data_PendingCrop.size() + "");
+                recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(passing_Data_PendingCrop, Key, ID, 'B', Buyer_Dashboard.this));
 
 
             }

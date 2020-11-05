@@ -1,56 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".OptionMenu.Feedback">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/bitter"
+        android:gravity="center_horizontal"
         android:text="FEEDBACK"
+        android:textColor="@color/BuyerTextColour"
         android:textSize="40dp"
-        android:fontFamily="sans-serif-black"
-        android:textStyle="bold"
-        android:textColor="#41784D"
-        android:gravity="center_horizontal"/>
+        android:textStyle="bold" />
 
     <RatingBar
         android:id="@+id/ratingBar"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
 
     <TextView
+        android:id="@id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="20dp"
-        android:text="Is there anything that can be improved ?"
-        android:textSize="20sp"
+        android:layout_below="@id/ratingBar"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20sp"
-        />
+android:gravity="center"
+        android:paddingStart="20dp"
+        android:text="Please give us Suggestions\nTo make this APP better"
+        android:textSize="20dp" />
 
     <EditText
         android:id="@+id/edt_feedback_suggestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="20dp"
-        android:hint="Enter description"
+        android:layout_below="@id/textView2"
+        android:layout_centerHorizontal="true"
+        android:hint="Type your Sugessions here"
+        android:padding="10dp"
+        android:textSize="20sp"
+
         />
 
     <Button
         android:id="@+id/btn_feedback_submit"
-        android:layout_width="117dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/ButtonBackground"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/normal_btn_format"
+
+        android:padding="10dp"
         android:text="Submit"
         android:textSize="25dp" />
 
 
-</LinearLayout>
+</RelativeLayout>

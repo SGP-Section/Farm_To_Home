@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="1dp"
+    android:layout_margin="5dp"
     android:background="@drawable/buyer_pending_recycler"
     app:cardCornerRadius="50dp">
 
@@ -123,7 +123,7 @@
             <Button
                 android:id="@+id/cancel_rem_stock"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/cancel_format_2"
                 android:layout_gravity="right"
                 android:text="Cancel"

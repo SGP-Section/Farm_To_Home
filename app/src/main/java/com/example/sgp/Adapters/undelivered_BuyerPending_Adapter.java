@@ -55,7 +55,7 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
 
     @Override
     public void onBindViewHolder(@NonNull final undelivered_ViewHolder holder, final int position) {
-        if (!ID.isEmpty()) {
+        if (ID.size()>0) {
             final Database_Class D_obj = Data.get(position);
             final String ID_local = ID.get(position);
             String mNameValue = D_obj.mNameValue;
@@ -194,4 +194,5 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
 
         }
     }
+
 }
