@@ -216,10 +216,8 @@
                 android:id="@+id/callButton"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-
                 android:layout_above="@+id/To_Buy_btn"
-
-                android:background="@drawable/cancel_format"
+                android:background="@drawable/call_btn"
                 app:srcCompat="@android:drawable/stat_sys_phone_call" />
 
             <ImageButton

@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5sp"
-    android:background="@color/RecyclerBKG"
-    app:cardCornerRadius="4sp">
+    android:layout_margin="1dp"
+    android:background="@drawable/buyer_pending_recycler"
+    app:cardCornerRadius="50dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="4dp">
+        android:padding="1dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -122,11 +122,10 @@
 
             <Button
                 android:id="@+id/cancel_rem_stock"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/cancel_format"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cancel_format_2"
                 android:layout_gravity="right"
-                android:layout_marginEnd="20dp"
                 android:text="Cancel"
                 android:textColor="@color/BLACK"
                 android:textSize="15dp" />
