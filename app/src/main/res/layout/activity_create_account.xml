@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login_CreateAcc_Section.Create_Account"
+    tools:context=".Login_CreateAcc_Section.Login_Page"
     android:backgroundTint="#A6FFFFFF"
     android:backgroundTintMode="multiply"
     android:orientation="vertical"

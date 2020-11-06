@@ -28,6 +28,19 @@ public class Sell_Confirm extends AppCompatActivity {
     int orderno = 0;
 
     TextView txt_crop, txt_preferredArea, txt_weightPerQua, txt_quantity, txt_TotalWeight, txt_pricePerQua, txt_TotalPrice;
+    private String mNameValue, mPhnoValue, mCropNameValue, mPriceValue, mQuantityValue, mWeightValue, mAreaValue, mDateValue;
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(Sell_Confirm.this, Sell_Activity.class);
+        intent.putExtra("ifcondition", true);
+        intent.putExtra("CropValue", txt_crop.getText().toString());
+        intent.putExtra("PreferredArea", txt_preferredArea.getText().toString());
+        intent.putExtra("WeightPerQuantity", txt_weightPerQua.getText().toString().substring(0, 4));
+        intent.putExtra("Quantity", txt_quantity.getText().toString());
+        intent.putExtra("PricePerQuantity", txt_pricePerQua.getText().toString());
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,14 +72,14 @@ public class Sell_Confirm extends AppCompatActivity {
         txt_pricePerQua.setText(getIntent().getStringExtra("PricePerQuantity"));
         txt_TotalPrice.setText(TotalPrice_i);
 
-        String mPhnoValue = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
-        String mNameValue = (getIntent().getStringExtra("NameValue"));
-        String mCropNameValue = txt_crop.getText().toString();
-        String mPriceValue = txt_pricePerQua.getText().toString();
-        String mQuantityValue = txt_quantity.getText().toString();
-        String mWeightValue = txt_weightPerQua.getText().toString();
-        String mAreaValue = txt_preferredArea.getText().toString();
-        String mDateValue = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+         mPhnoValue = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
+         mNameValue = (getIntent().getStringExtra("NameValue"));
+         mCropNameValue = txt_crop.getText().toString();
+         mPriceValue = txt_pricePerQua.getText().toString();
+         mQuantityValue = txt_quantity.getText().toString();
+         mWeightValue = txt_weightPerQua.getText().toString();
+         mAreaValue = txt_preferredArea.getText().toString();
+         mDateValue = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
         final Database_Class D_passing = new Database_Class(mNameValue, mPhnoValue, mCropNameValue, mPriceValue, mQuantityValue, mWeightValue, mAreaValue, mDateValue);
         getOrderNumber();
 

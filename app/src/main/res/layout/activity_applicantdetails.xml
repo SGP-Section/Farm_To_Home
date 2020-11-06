@@ -61,10 +61,10 @@
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/rounding"
+            android:background="@drawable/search_bar"
             android:hint="Enter Name"
             android:inputType="text"
-            android:paddingLeft="10dp"
+            android:paddingLeft="20dp"
             android:textColorHint="#7A706E" />
 
         <TextView
@@ -87,10 +87,10 @@
 
             android:layout_height="36dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/rounding"
+            android:background="@drawable/search_bar"
             android:hint="Enter Date Of Birth(DD/MM/YYYY)"
             android:inputType="date"
-            android:paddingLeft="10dp"
+            android:paddingLeft="20dp"
             android:textColorHint="#7A706E" />
 
         <TextView
@@ -113,10 +113,10 @@
 
             android:layout_height="36dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/rounding"
+            android:background="@drawable/search_bar"
             android:hint="Enter Preferred Area"
             android:inputType="text"
-            android:paddingLeft="10dp"
+            android:paddingLeft="20dp"
             android:textColorHint="#7A706E" />
 
         <TextView
@@ -139,10 +139,10 @@
 
             android:layout_height="36dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/rounding"
+            android:background="@drawable/search_bar"
             android:hint="Enter your Residing Area"
             android:inputType="text"
-            android:paddingStart="10sp"
+            android:paddingLeft="20dp"
             android:textColorHint="#7A706E" />
     </LinearLayout>
 
@@ -158,6 +158,6 @@
         android:padding="10dp"
         android:text="Next"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textStyle="bold" />
 </LinearLayout>

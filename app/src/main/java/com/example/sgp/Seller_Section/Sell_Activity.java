@@ -21,6 +21,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class Sell_Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,Seller_Dashboard.class));
+    }
 
     private EditText edt_cropName, edt_preferredArea, edt_quantity, edt_price;
     private final String[] w_value = {"0.250 kg", "0.50 kg", "1.000 kg", "2.000 kg", "3.000 kg", "4.000 kg", "5.000 kg", "10.000 kg"};
