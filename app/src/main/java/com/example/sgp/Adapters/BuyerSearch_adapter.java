@@ -71,7 +71,6 @@ public class BuyerSearch_adapter extends RecyclerView.Adapter<BuyerSearch_adapte
         holder.to_buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Tobuy" + position, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, BuyActivity.class);
                 intent.putExtra("Key", Keys.get(position));
                 intent.putExtra("NameValue", NameValue);

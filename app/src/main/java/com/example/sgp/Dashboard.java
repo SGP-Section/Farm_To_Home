@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sgp.Buyer_Section.Buyer_Dashboard;
+import com.example.sgp.Login_CreateAcc_Section.Login_Page;
 import com.example.sgp.OptionMenu.AccountActivity;
 import com.example.sgp.OptionMenu.ContactUs;
 import com.example.sgp.OptionMenu.Feedback;
@@ -37,6 +38,11 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_dashboard);
         getSupportActionBar().setTitle("Dashboard");
+        if(FirebaseAuth.getInstance().getUid()==null){
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(Dashboard.this, Login_Page.class));
+            finish();
+        }
         button_buyer = findViewById(R.id.btn_buyer);
         button_seller = findViewById(R.id.btn_seller);
         LoadData();

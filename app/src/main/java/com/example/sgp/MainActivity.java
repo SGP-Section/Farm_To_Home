@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.net.NetworkInfo;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -17,6 +17,7 @@ import android.widget.ProgressBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sgp.Login_CreateAcc_Section.Login_Page;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+finish();
+            startActivity(new Intent(MainActivity.this, Login_Page.class));
+        }
         final ProgressBar spin = (ProgressBar) findViewById(R.id.progressBar_intro);
 
         //Initialize connectivityManager
@@ -31,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Get active network Information
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+
 
         if (networkInfo == null || !networkInfo.isConnected() || !networkInfo.isAvailable()) {
             //when internet is inactive

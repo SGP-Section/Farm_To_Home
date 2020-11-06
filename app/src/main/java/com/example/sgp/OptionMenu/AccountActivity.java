@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sgp.Login_CreateAcc_Section.Login_Page;
 import com.example.sgp.MainActivity;
 import com.example.sgp.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -105,7 +106,7 @@ public class AccountActivity extends AppCompatActivity {
                         FirebaseDatabase.getInstance().getReference("Data/" + MobileNo).removeValue();
                         FirebaseAuth.getInstance().getCurrentUser().delete();
                         finish();
-                        //startActivity(new Intent(AccountActivity.this, L));
+                        startActivity(new Intent(AccountActivity.this, Login_Page.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
                         Toast.makeText(AccountActivity.this, "Account Deleted", Toast.LENGTH_SHORT).show();
 
 

@@ -4,6 +4,6 @@
     <solid android:color="@color/WHITE"/>
     <stroke
         android:width="@dimen/borderWidth"
-        android:color="@color/BuyerBackgroundColour" />
+        android:color="@color/colorPrimary" />
     <corners android:radius="20dp" />
 </shape>
