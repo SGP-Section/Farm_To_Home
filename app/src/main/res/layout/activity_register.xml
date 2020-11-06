@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:background="@drawable/rounding"
-            android:hint="OTP"
+            android:hint="Enter OTP"
             android:inputType="phone"
             android:letterSpacing="0.5"
             android:padding="10dp"
