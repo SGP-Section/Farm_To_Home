@@ -31,7 +31,7 @@
         android:rotationX="-10"
         android:shadowColor="#FFC107"
         android:shadowDx="1"
-        android:text="Farm To Home"
+        android:text="@string/app_name"
         android:textColor="@color/BuyerTextColour"
         android:textSize="45dp"
         app:layout_constraintBottom_toBottomOf="parent"

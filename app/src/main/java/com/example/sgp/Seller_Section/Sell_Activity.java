@@ -1,6 +1,7 @@
 package com.example.sgp.Seller_Section;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import androidx.annotation.Nullable;
@@ -19,6 +21,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.squareup.picasso.Picasso;
 
 public class Sell_Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     @Override
@@ -30,6 +33,11 @@ public class Sell_Activity extends AppCompatActivity implements AdapterView.OnIt
     private EditText edt_cropName, edt_preferredArea, edt_quantity, edt_price;
     private final String[] w_value = {"0.250 kg", "0.50 kg", "1.000 kg", "2.000 kg", "3.000 kg", "4.000 kg", "5.000 kg", "10.000 kg"};
     private String SpinnerText = "", S_edt_nameValue = "", S_edt_cropName = "", S_edt_preferredArea = "", S_edt_quantity = "", S_edt_price = "";
+
+    private static final int PICK_IMAGE_REQUEST = 1;
+    private Button choosebutton;
+    private ImageView mImageView;
+    private Uri mImageUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +53,10 @@ public class Sell_Activity extends AppCompatActivity implements AdapterView.OnIt
         edt_preferredArea = findViewById(R.id.edt_PreferredArea);
         edt_quantity = findViewById(R.id.edt_quantityValue);
         edt_price = findViewById(R.id.edt_price);
+
+        choosebutton = findViewById(R.id.chooseFileButton);
+        mImageView = findViewById(R.id.Upload_imageview);
+
         getName(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber());
 
         if (getIntent().getBooleanExtra("ifcondition", false)) {
@@ -70,6 +82,12 @@ public class Sell_Activity extends AppCompatActivity implements AdapterView.OnIt
             }
         }
 
+        choosebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFileChooser();
+            }
+        });
 
         btn_proceedToSell.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +123,22 @@ public class Sell_Activity extends AppCompatActivity implements AdapterView.OnIt
 
     }
 
+    private void openFileChooser() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
+                && data != null && data.getData() != null) {
+            mImageUri = data.getData();
+            Picasso.with(this).load(mImageUri).into(mImageView);
+        }
+    }
 
     private void edtSetText() {
         S_edt_cropName = edt_cropName.getText().toString();

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/BuyerCardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -16,232 +17,254 @@
             android:id="@+id/LL1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="4dp">
+            android:orientation="horizontal"
+            android:padding="4dp"
+            tools:ignore="MissingConstraints">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_s"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="10sp"
-                    android:text="Seller Name:"
-                    android:textColor="#151515"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/txt_sellerName_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="4sp"
-                    android:text="Patel Dhruv"
-                    android:textColor="#151515"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_sphno"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_s"
-                    android:layout_marginTop="0dp"
-                    android:paddingStart="10sp"
-                    android:text="Phone No:"
-                    android:textColor="#151515"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/txt_sellerPhno_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_sellerName_value"
-                    android:layout_toEndOf="@+id/txt_sphno"
-                    android:paddingStart="4sp"
-                    android:text="+911234567890"
-                    android:textColor="#151515"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_c"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_sphno"
-                    android:paddingStart="10sp"
-                    android:text="Crop: "
-                    android:textColor="#151515"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/txt_crop_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_sphno"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_toEndOf="@+id/txt_c"
-                    android:paddingStart="2sp"
-                    android:text="Tomato"
-                    android:textColor="#151515"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_Quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_c"
-                    android:paddingStart="10sp"
-                    android:text="Available Quantity: "
-                    android:textColor="#151515"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/txt_quantity_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_c"
-                    android:layout_marginStart="4sp"
-                    android:layout_toEndOf="@+id/txt_Quantity"
-                    android:paddingStart="2sp"
-                    android:text="00"
-                    android:textColor="#151515"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_weight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_Quantity"
-                    android:paddingStart="10sp"
-                    android:text="Weight per 1-KG: "
-                    android:textColor="#151515"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/txt_weight_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_Quantity"
-                    android:layout_marginStart="4sp"
-                    android:layout_toEndOf="@+id/txt_weight"
-                    android:paddingStart="2sp"
-                    android:text="00.00 kg"
-                    android:textColor="#151515"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
+                android:id="@+id/imageCall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginEnd="0dp"
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txt_price"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_s"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10sp"
+                        android:text="Seller Name:"
+                        android:textColor="#151515"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/txt_sellerName_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="4sp"
+                        android:text="Patel Dhruv"
+                        android:textColor="#151515"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_sphno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_s"
+                        android:layout_marginTop="0dp"
+                        android:paddingStart="10sp"
+                        android:text="Phone No:"
+                        android:textColor="#151515"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/txt_sellerPhno_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_sellerName_value"
+                        android:layout_toEndOf="@+id/txt_sphno"
+                        android:paddingStart="4sp"
+                        android:text="+911234567890"
+                        android:textColor="#151515"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_sphno"
+                        android:paddingStart="10sp"
+                        android:text="Crop: "
+                        android:textColor="#151515"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/txt_crop_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_sphno"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_toEndOf="@+id/txt_c"
+                        android:paddingStart="2sp"
+                        android:text="Tomato"
+                        android:textColor="#151515"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_Quantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_c"
+                        android:paddingStart="10sp"
+                        android:text="Available Quantity: "
+                        android:textColor="#151515"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/txt_quantity_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_c"
+                        android:layout_marginStart="4sp"
+                        android:layout_toEndOf="@+id/txt_Quantity"
+                        android:paddingStart="2sp"
+                        android:text="00"
+                        android:textColor="#151515"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_Quantity"
+                        android:paddingStart="10sp"
+                        android:text="Weight per 1-KG: "
+                        android:textColor="#151515"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/txt_weight_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_Quantity"
+                        android:layout_marginStart="4sp"
+                        android:layout_toEndOf="@+id/txt_weight"
+                        android:paddingStart="2sp"
+                        android:text="00.00 kg"
+                        android:textColor="#151515"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_weight"
-                    android:paddingStart="10sp"
-                    android:text="Price per Quantity: "
-                    android:textColor="#151515"
-                    android:textSize="20sp" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/txt_price_value"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/txt_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_weight"
+                        android:paddingStart="10sp"
+                        android:text="Price per Quantity: "
+                        android:textColor="#151515"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/txt_price_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_Quantity"
+                        android:layout_marginStart="4sp"
+                        android:layout_toEndOf="@+id/txt_price"
+                        android:paddingStart="2sp"
+                        android:text="₹ 000"
+                        android:textColor="#151515"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="261dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_Quantity"
-                    android:layout_marginStart="4sp"
-                    android:layout_toEndOf="@+id/txt_price"
-                    android:paddingStart="2sp"
-                    android:text="₹ 000"
-                    android:textColor="#151515"
-                    android:textSize="20sp" />
-            </LinearLayout>
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_Area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_price"
+                        android:paddingStart="10sp"
+                        android:text="Area: "
+                        android:textColor="#151515"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/txt_area_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_weight"
+                        android:layout_marginStart="4sp"
+                        android:layout_toEndOf="@+id/txt_Area"
+                        android:paddingStart="2sp"
+                        android:text="Anywhere"
+                        android:textColor="#151515"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>1
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:id="@+id/Imagebtn_callbtn"
+                android:layout_width="167dp"
+                android:layout_height="189dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-                <TextView
-                    android:id="@+id/txt_Area"
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp" />
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_price"
-                    android:paddingStart="10sp"
-                    android:text="Area: "
-                    android:textColor="#151515"
-                    android:textSize="20sp" />
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
 
-                <TextView
-                    android:id="@+id/txt_area_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_weight"
-                    android:layout_marginStart="4sp"
-                    android:layout_toEndOf="@+id/txt_Area"
-                    android:paddingStart="2sp"
-                    android:text="Anywhere"
-                    android:textColor="#151515"
-                    android:textSize="20sp" />
+                    <ImageButton
+                        android:id="@+id/callButton"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_above="@+id/To_Buy_btn"
+                        android:background="@drawable/call_btn"
+                        app:srcCompat="@android:drawable/stat_sys_phone_call" />
+
+                    <ImageButton
+                        android:id="@+id/To_Buy_btn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/normal_btn_format"
+                        android:src="@drawable/ic_baseline_arrow_forward_24" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <ImageButton
-                android:id="@+id/callButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_above="@+id/To_Buy_btn"
-                android:background="@drawable/call_btn"
-                app:srcCompat="@android:drawable/stat_sys_phone_call" />
-
-            <ImageButton
-                android:id="@+id/To_Buy_btn"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_below="@+id/txt_weight"
-                android:layout_marginTop="20dp"
-                android:layout_alignParentEnd="true"
-                android:background="@drawable/normal_btn_format"
-                android:src="@drawable/ic_baseline_arrow_forward_24" />
-
-        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
