@@ -5,15 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".qrCodeReader">
-
-    <!--Frame layout is required as we are using camera view-->
-    <!--Below is the scannerliveview which will scan QR code-->
     <eu.livotov.labs.android.camview.ScannerLiveView
         android:id="@+id/camview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
 
-    <!--TextView to display the scanned data-->
+
+    </eu.livotov.labs.android.camview.ScannerLiveView>
     <TextView
         android:id="@+id/idTVscanned"
         android:layout_width="match_parent"
@@ -23,5 +21,18 @@
         android:padding="5dp"
         android:text="@string/scanned_data"
         android:textColor="@color/BLACK" />
+    <Button
+        android:id="@+id/btn_back_qrR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom||right"
+        android:layout_margin="50dp"
+        android:background="@drawable/back_blue_btn_format"
+        android:padding="10dp"
+        android:text="Back"
+        android:textAllCaps="false"
+        android:textColor="@color/BLACK"
+        android:textStyle="bold" />
+
 
 </FrameLayout>

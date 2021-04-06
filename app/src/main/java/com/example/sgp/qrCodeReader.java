@@ -24,18 +24,12 @@ public class qrCodeReader extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code_reader);
 
-        // check permission method is to check that the
-        // camera permission is granted by user or not.
-        // request permission method is to request the
-        // camera permission if not given.
         if (checkPermission()) {
-            // if permission is already granted display a toast message
             Toast.makeText(this, "Permission Granted..", Toast.LENGTH_SHORT).show();
         } else {
             requestPermission();
         }
 
-        // initialize scannerLiveview and textview.
         scannedTV = findViewById(R.id.idTVscanned);
         camera = (ScannerLiveView) findViewById(R.id.camview);
 
