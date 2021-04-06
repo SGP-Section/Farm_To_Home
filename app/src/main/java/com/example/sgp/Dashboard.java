@@ -8,8 +8,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +25,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import static com.example.sgp.R.*;
+import static com.example.sgp.R.id;
+import static com.example.sgp.R.layout;
 
 public class Dashboard extends AppCompatActivity {
 
@@ -46,6 +45,13 @@ public class Dashboard extends AppCompatActivity {
         button_buyer = findViewById(R.id.btn_buyer);
         button_seller = findViewById(R.id.btn_seller);
         LoadData();
+
+        findViewById(id.to_qr).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Dashboard.this,qrCodeGenerator.class));
+            }
+        });
 
 
         button_buyer.setOnClickListener(new View.OnClickListener() {

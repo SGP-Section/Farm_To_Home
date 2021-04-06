@@ -42,6 +42,18 @@
             android:padding="10dp"
             android:text="buyer"
             android:textColor="#000000"
+            android:layout_marginBottom="50dp"
+            android:textSize="45dp"
+            />
+        <Button
+            android:id="@+id/to_qr"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/RecyclerBKG"
+            android:fontFamily="@font/coustard"
+            android:padding="10dp"
+            android:text="QR"
+            android:textColor="#000000"
             android:textSize="45dp" />
     </LinearLayout>
 
