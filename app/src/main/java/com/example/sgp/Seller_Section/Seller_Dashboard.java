@@ -22,6 +22,7 @@ import com.example.sgp.OptionMenu.Feedback;
 import com.example.sgp.MainActivity;
 import com.example.sgp.OptionMenu.AccountActivity;
 import com.example.sgp.R;
+import com.example.sgp.QRcode.qrCodeReader;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -41,6 +42,13 @@ public class Seller_Dashboard extends AppCompatActivity {
         getSupportActionBar().setTitle("Seller Section");
         Initializing();
         SetProgressBar_Values();
+
+        findViewById(R.id.to_scan_qr).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Seller_Dashboard.this, qrCodeReader.class));
+            }
+        });
 
         To_Sell.setOnClickListener(new View.OnClickListener() {
             @Override

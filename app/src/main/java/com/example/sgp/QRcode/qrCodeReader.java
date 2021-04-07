@@ -1,13 +1,23 @@
-package com.example.sgp;
+package com.example.sgp.QRcode;
 
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.example.sgp.Adapters.Database_Class;
+import com.example.sgp.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import eu.livotov.labs.android.camview.ScannerLiveView;
 import eu.livotov.labs.android.camview.scanner.decoder.zxing.ZXDecoder;
@@ -15,35 +25,39 @@ import eu.livotov.labs.android.camview.scanner.decoder.zxing.ZXDecoder;
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.VIBRATE;
 
-public class qrCodeReader extends AppCompatActivity{
+public class qrCodeReader extends AppCompatActivity {
     private ScannerLiveView camera;
     private TextView scannedTV;
+    private Database_Class D_obj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_code_reader);
 
-        if (checkPermission()) {
-            Toast.makeText(this, "Permission Granted..", Toast.LENGTH_SHORT).show();
-        } else {
+        if (!checkPermission())
             requestPermission();
-        }
 
-        scannedTV = findViewById(R.id.idTVscanned);
-        camera = (ScannerLiveView) findViewById(R.id.camview);
+
+        findViewById(R.id.btn_back_qrR).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        camera = (ScannerLiveView) findViewById(R.id.camviewQR);
 
         camera.setScannerViewEventListener(new ScannerLiveView.ScannerViewEventListener() {
             @Override
             public void onScannerStarted(ScannerLiveView scanner) {
                 // method is called when scanner is started
-                Toast.makeText(qrCodeReader.this, "Scanner Started", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(qrCodeReader.this, "Scanner Started", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onScannerStopped(ScannerLiveView scanner) {
                 // method is called when scanner is stoped.
-                Toast.makeText(qrCodeReader.this, "Scanner Stopped", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(qrCodeReader.this, "Scanner Stopped", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -54,10 +68,39 @@ public class qrCodeReader extends AppCompatActivity{
 
             @Override
             public void onCodeScanned(String data) {
-                // method is called when camera scans the
-                // qr code and the data from qr code is
-                // stored in data in string format.
-                scannedTV.setText(data);
+                String[] qrstr = data.split("\\|", 4);
+                for (int i = 0; i < qrstr.length; i++) {
+                    Log.d("QR", qrstr[i]);
+                }
+
+                FirebaseDatabase.getInstance().getReference(qrstr[0]).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        D_obj = snapshot.getValue(Database_Class.class);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+                FirebaseDatabase.getInstance().getReference(qrstr[0]).removeValue();
+                FirebaseDatabase.getInstance().getReference(qrstr[1]).setValue(D_obj);
+                FirebaseDatabase.getInstance().getReference(qrstr[2]).removeValue();
+                FirebaseDatabase.getInstance().getReference(qrstr[3]).setValue(D_obj);
+                finish();
+
+                      /*  confirm.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Toast.makeText(context, "Order Deleted", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                                notifyItemRemoved(position);
+
+
+                            }
+                        });*/
             }
         });
     }

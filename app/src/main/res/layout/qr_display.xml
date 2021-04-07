@@ -15,18 +15,18 @@
 
 
     <Button
-        android:id="@+id/btn_back_qrG"
+        android:id="@+id/btn_back_QRDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="50dp"
+        android:textSize="20dp"
         android:background="@drawable/back_blue_btn_format"
         android:padding="10dp"
         android:text="Back"
-        android:textAllCaps="false"
         android:textColor="@color/BLACK"
-        android:textStyle="bold" />
+    />
 
 
 </RelativeLayout>

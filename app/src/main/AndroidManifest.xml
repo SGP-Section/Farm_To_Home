@@ -13,8 +13,7 @@
         android:roundIcon="@drawable/ic_new_mainlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme_Custom">
-        <activity android:name=".qrCodeReader"/>
-        <activity android:name=".qrCodeGenerator" />
+        <activity android:name=".QRcode.qrCodeReader"/>
         <activity
             android:name=".OptionMenu.Feedback"
             android:screenOrientation="portrait"

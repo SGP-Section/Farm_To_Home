@@ -46,12 +46,7 @@ public class Dashboard extends AppCompatActivity {
         button_seller = findViewById(R.id.btn_seller);
         LoadData();
 
-        findViewById(id.to_qr).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Dashboard.this,qrCodeGenerator.class));
-            }
-        });
+
 
 
         button_buyer.setOnClickListener(new View.OnClickListener() {
