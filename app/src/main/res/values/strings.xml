@@ -1,8 +1,17 @@
 <resources>
-    <string name="app_name">Farm To Home</string>
+    <string name="app_name">Krishi Bazar</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <dimen name="borderWidth">2dp</dimen>
     <dimen name="shadowborderWidth">4dp</dimen>
+    <dimen name="qrsize">100dp</dimen>
+
+    <string name="qr_code">qr_code</string>
+    <string name="enter_your_info">Enter your info</string>
+    <string name="generate_qr_code">Generate QR Code</string>
+
+    <string name="toggle_flash">Toggle Flash</string>
+    <string name="action_settings">Settings</string>
+    <string name="scanned_data">Scanned Data</string>
 
 </resources>
