@@ -10,50 +10,38 @@
 >
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-
-        android:layout_marginTop="70dp"
-        android:src="@drawable/ic_logo_main"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="100dp"
+        android:padding="30dp"
+        android:src="@drawable/ic_logo_txt"
         app:layout_constraintBottom_toTopOf="@+id/textViewNULL1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/textViewNULL1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:fontFamily="@font/pacifico"
-        android:gravity="center"
-        android:rotationX="-10"
-        android:shadowColor="#FFC107"
-        android:shadowDx="1"
-        android:text="@string/app_name"
-        android:textColor="@color/BuyerTextColour"
-        android:textSize="45dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.324" />
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="?android:attr/listDivider"
+        android:foreground="@color/BuyerBackgroundColour" />
 
     <TextView
         android:id="@+id/textViewNULL2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:fontFamily="@font/courgette"
+        android:fontFamily="@font/amaranth"
         android:gravity="center"
         android:rotationX="5"
         android:shadowColor="#FFC107"
         android:shadowDx="1"
-        android:text="Crop Selling Platform"
-        android:textColor="@color/BuyerBackgroundColour"
+        android:text="Online Crop Selling Platform"
+        android:textColor="@color/colorPrimary"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -68,12 +56,14 @@
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginBottom="188dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewNULL2"
         app:layout_constraintVertical_bias="0.833" />
+
 
 </LinearLayout>
 

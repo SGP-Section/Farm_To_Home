@@ -10,12 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sgp.QRcode.QRcodeGenerator;
 import com.example.sgp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
@@ -103,6 +105,7 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
                                 notifyItemRemoved(position);
 
 
+
                             }
                         });
                         back.setOnClickListener(new View.OnClickListener() {
@@ -119,44 +122,31 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
                     @Override
                     public void onClick(View view) {
                         final Dialog dialog = new Dialog(context);
-                        dialog.setContentView(R.layout.dialog_screen);
+
+                        dialog.setContentView(R.layout.qr_display);
                         dialog.setCanceledOnTouchOutside(false);
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
                         dialog.getWindow().getAttributes().windowAnimations = android.R.style.Animation_Dialog;
-                        TextView title, sub;
-                        title = dialog.findViewById(R.id.cancel_title);
-                        sub = dialog.findViewById(R.id.cancel_sub);
-                        title.setText("Delivery Conformation");
-                        sub.setText("Press Confirm If you have received your Order");
-                        final Button confirm, back;
-                        confirm = dialog.findViewById(R.id.btn_confirm_cancel);
-                        back = dialog.findViewById(R.id.btn_back);
                         Log.d("Tag", key.get(position));
-
-                        confirm.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Toast.makeText(context, "Order Deleted", Toast.LENGTH_SHORT).show();
-                                FirebaseDatabase.getInstance().getReference("Data/" + MobileNo + "/Buyer/Pending/" + key.get(position)).removeValue();
-                                FirebaseDatabase.getInstance().getReference("Data/" + MobileNo + "/Buyer/Delivered/" + key.get(position)).setValue(D_obj);
-//                           getID(position);
-                                FirebaseDatabase.getInstance().getReference("Data/" + D_obj.mPhnoValue + "/Seller/Undelivered/" + ID_local).removeValue();
-                                FirebaseDatabase.getInstance().getReference("Data/" + D_obj.mPhnoValue + "/Seller/Sold/" + ID_local).setValue(D_obj);
-                                dialog.dismiss();
-                                notifyItemRemoved(position);
-
-
-                            }
-                        });
-                        back.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                dialog.dismiss();
-                            }
-                        });
-
+                        ImageView qrCodeIV = dialog.findViewById(R.id.idIVQrcode);
+                        String QRString = ("Data/" + MobileNo + "/Buyer/Pending/" + key.get(position))+"|"
+                                +("Data/" + MobileNo + "/Buyer/Delivered/" + key.get(position))+"|"
+                                +("Data/" + D_obj.mPhnoValue + "/Seller/Undelivered/" + ID_local)+"|"
+                                +("Data/" + D_obj.mPhnoValue + "/Seller/Sold/" + ID_local);
+                        QRcodeGenerator.CreateQR(qrCodeIV,QRString);
+                        Log.d("QR",QRString);
                         dialog.show();
+
+                        dialog.findViewById(R.id.btn_back_QRDialog).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog.dismiss();
+                                dialog.cancel();
+                            }
+                        });
+
+
                     }
                 });
 
