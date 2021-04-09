@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Krishi Bazar</string>
+    <string name="app_name">Krushi Bazar</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <dimen name="borderWidth">2dp</dimen>

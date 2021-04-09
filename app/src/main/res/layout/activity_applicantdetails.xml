@@ -14,7 +14,7 @@
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:background="@color/BuyerTextColour" />
 
     <TextView
@@ -90,6 +90,30 @@
             android:background="@drawable/search_bar"
             android:hint="Enter Date Of Birth(DD/MM/YYYY)"
             android:inputType="date"
+            android:paddingLeft="20dp"
+            android:textColorHint="#7A706E" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/coustard"
+            android:paddingLeft="30dp"
+            android:text="Adharcard Number:"
+            android:textColor="#2E2D2D"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/AdharcardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/search_bar"
+            android:hint="Enter Adharcard Number "
+            android:inputType="number"
             android:paddingLeft="20dp"
             android:textColorHint="#7A706E" />
 
