@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,11 +9,12 @@
     tools:context=".Dashboard">
 
     <LinearLayout
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -21,33 +22,74 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498">
 
-        <Button
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            android:id="@+id/btn_seller"
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_outline_sell" />
+
+            <Button
+
+                android:id="@+id/btn_seller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+
+
+                android:background="@drawable/btn_bkg"
+                android:fontFamily="@font/lato_black_italic"
+                android:padding="20dp"
+                android:text="Seller"
+                android:textColor="@color/WHITE"
+                android:textSize="45dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:clickable="false"
+                android:background="@drawable/ic_outline_buy" />
+
+            <Button
+                android:id="@+id/btn_buyer"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="50dp"
+
+                android:background="@drawable/btn_bkg"
+                android:fontFamily="@font/lato_black_italic"
+                android:padding="20dp"
+                android:text="buyer"
+                android:textColor="@color/WHITE"
+                android:textSize="45dp" />
+
+
+        </LinearLayout>
+
+        <!--<Button
+            android:id="@+id/btn_transporter"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="50dp"
-            android:background="@color/RecyclerBKG"
-            android:fontFamily="@font/coustard"
-            android:padding="10dp"
-            android:text="Seller"
-            android:textColor="#000000"
-            android:textSize="45dp" />
 
-        <Button
-            android:id="@+id/btn_buyer"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@color/RecyclerBKG"
-            android:fontFamily="@font/coustard"
+            android:background="@drawable/btn_bkg"
+            android:fontFamily="@font/lato_black_italic"
             android:padding="10dp"
-            android:text="buyer"
-            android:textColor="#000000"
-            android:textSize="45dp"
-            />
-
+            android:text="Transporter"
+            android:textColor="@color/WHITE"
+            android:textSize="45dp" />-->
 
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

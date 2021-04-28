@@ -7,8 +7,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,7 +38,8 @@ public class Buyer_Dashboard extends AppCompatActivity {
     ArrayList<Database_Class> passing_Data_PendingCrop = new ArrayList<>(0);
     ArrayList<String> Key = new ArrayList<>(0);
     ArrayList<String> ID = new ArrayList<>(0);
-    private Button button_ProceedToBuy;
+    private ImageButton button_ProceedToBuy;
+    private ImageButton button_OrderHistory;
     private TextView text_PendingOrders;
 
 
@@ -47,6 +49,7 @@ public class Buyer_Dashboard extends AppCompatActivity {
         setContentView(R.layout.activity_buyer_dashboard);
         getSupportActionBar().setTitle("Buyer Section");
         button_ProceedToBuy = findViewById(R.id.btn_ProceedToBuy);
+        button_ProceedToBuy = findViewById(R.id.btn_OrderHistory);
         text_PendingOrders = findViewById(R.id.txt_PendingOrderNumber);
 
 
@@ -84,7 +87,7 @@ public class Buyer_Dashboard extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Toast.makeText(getApplicationContext(), "Data UnAvailible", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -93,6 +96,13 @@ public class Buyer_Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Buyer_Dashboard.this, BuyerSearchActivity.class));
+            }
+        });
+
+        button_ProceedToBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Buyer_Dashboard.this, Order_History.class));
             }
         });
 

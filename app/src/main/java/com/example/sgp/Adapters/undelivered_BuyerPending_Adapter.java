@@ -77,6 +77,8 @@ public class undelivered_BuyerPending_Adapter extends RecyclerView.Adapter<undel
             holder.Weight_perItem.setText(mWeightValue + "");
             holder.Total_Quantity.setText(Total_Quantity + "");
             holder.Area.setText(mAreaValue);
+
+
             if (decision == 'B') {
                 holder.CANCEL.setOnClickListener(new View.OnClickListener() {
                     @Override

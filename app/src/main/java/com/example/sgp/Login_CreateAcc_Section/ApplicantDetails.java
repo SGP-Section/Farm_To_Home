@@ -65,7 +65,7 @@ public class ApplicantDetails extends AppCompatActivity {
 
                 String ss = String.valueOf(C2);
 
-                if (C1 && (ss == "true")) {
+                if (C1 && C2) {
                     finish();
                     startActivity(new Intent(ApplicantDetails.this, Dashboard.class));
                 } else {

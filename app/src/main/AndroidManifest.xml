@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sgp">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- Permission for camera -->
     <uses-permission android:name="android.permission.CAMERA" /> <!-- Permission to vibrate -->
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -14,6 +15,13 @@
         android:roundIcon="@drawable/ic_new_mainlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme_Custom">
+        <activity android:name=".Buyer_Section.Order_History">
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
+
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
+        </activity>
         <activity android:name=".QRcode.qrCodeReader" />
         <activity
             android:name=".OptionMenu.Feedback"
