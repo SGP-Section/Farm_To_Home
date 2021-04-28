@@ -3,7 +3,7 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <dimen name="borderWidth">2dp</dimen>
-    <dimen name="shadowborderWidth">4dp</dimen>
+    <dimen name="shadowborderWidth">10dp</dimen>
     <dimen name="qrsize">100dp</dimen>
 
     <string name="qr_code">qr_code</string>
