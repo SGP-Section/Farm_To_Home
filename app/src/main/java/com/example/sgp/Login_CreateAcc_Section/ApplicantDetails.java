@@ -69,7 +69,8 @@ public class ApplicantDetails extends AppCompatActivity {
                     finish();
                     startActivity(new Intent(ApplicantDetails.this, Dashboard.class));
                 } else {
-                    Toast.makeText(ApplicantDetails.this, "Please enter valid Adharcard Number", Toast.LENGTH_SHORT).show();
+                    AdharNumber.setError("Please enter valid Aadharcard Number");
+                    AdharNumber.requestFocus();
                 }
                 /*if(passwordCreate.compareTo(confirm_password)==0) {
                     boolean C1 = SaveToFirebase(data, "DATA", mobileCreate);

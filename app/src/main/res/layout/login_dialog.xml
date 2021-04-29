@@ -21,16 +21,18 @@
         android:fontFamily="serif"
         android:text="Account Already Exsist"
         android:textAlignment="center"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textColor="#E30A54" />
+        android:textSize="30dp"
+        android:textColor="@color/BLACK" />
 
     <Button
         android:id="@+id/btn_login_acc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:background="#4CAF50"
-        android:padding="10dp"
+        android:background="@drawable/normal_btn_format"
+        android:padding="30dp"
         android:text="Login using Existing Account Details"
         android:textAllCaps="false"
         android:textColor="#2E2929"
@@ -41,8 +43,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:background="#F44336"
-        android:padding="10dp"
+        android:background="@drawable/cancel_normal"
+        android:padding="30dp"
         android:text="Login With New Account Details"
         android:textAllCaps="false"
         android:textColor="#2E2929"
