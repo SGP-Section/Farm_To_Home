@@ -49,7 +49,7 @@ public class Buyer_Dashboard extends AppCompatActivity {
         setContentView(R.layout.activity_buyer_dashboard);
         getSupportActionBar().setTitle("Buyer Section");
         button_ProceedToBuy = findViewById(R.id.btn_ProceedToBuy);
-        button_ProceedToBuy = findViewById(R.id.btn_OrderHistory);
+        button_OrderHistory = findViewById(R.id.btn_OrderHistory);
         text_PendingOrders = findViewById(R.id.txt_PendingOrderNumber);
 
 
@@ -99,7 +99,7 @@ public class Buyer_Dashboard extends AppCompatActivity {
             }
         });
 
-        button_ProceedToBuy.setOnClickListener(new View.OnClickListener() {
+        button_OrderHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Buyer_Dashboard.this, Order_History.class));

@@ -251,7 +251,7 @@
         android:background="@drawable/normal_btn_format"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:padding="10dp"
+        android:padding="15dp"
         android:hint="CONFIRM &amp; \nPlace Another Order"
         android:textColorHint="@color/Main_FontColor"
         android:textSize="25sp" />
