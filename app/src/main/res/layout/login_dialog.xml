@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:background="@drawable/cancel_normal"
+        android:background="@drawable/back_blue_btn_format"
         android:padding="30dp"
         android:text="Login With New Account Details"
         android:textAllCaps="false"

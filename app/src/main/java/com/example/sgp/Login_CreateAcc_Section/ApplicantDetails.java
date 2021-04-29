@@ -65,12 +65,11 @@ public class ApplicantDetails extends AppCompatActivity {
 
                 String ss = String.valueOf(C2);
 
-                if (C1 && C2) {
+                if (C1 && C2 && adharcardNumber != "") {
                     finish();
                     startActivity(new Intent(ApplicantDetails.this, Dashboard.class));
                 } else {
-                    AdharNumber.setError("Please enter valid Aadharcard Number");
-                    AdharNumber.requestFocus();
+                    Toast.makeText(ApplicantDetails.this, "Please Enter Valid Aadharcard Number", Toast.LENGTH_SHORT).show();
                 }
                 /*if(passwordCreate.compareTo(confirm_password)==0) {
                     boolean C1 = SaveToFirebase(data, "DATA", mobileCreate);
@@ -99,7 +98,7 @@ public class ApplicantDetails extends AppCompatActivity {
                 .addOnSuccessListener(ApplicantDetails.this, new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(ApplicantDetails.this,"Account Created Successfully",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(ApplicantDetails.this,"Account Created Successfully",Toast.LENGTH_SHORT).show();
                         ret =false;
 
                     }

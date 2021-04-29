@@ -93,7 +93,6 @@ public class Order_History extends AppCompatActivity {
                     dialog.show();
                 } else {
                     recyclerView.setAdapter(new undelivered_BuyerPending_Adapter(passing_Data_PendingCrop, Key, ID, 'O', Order_History.this));
-
                 }
 
             }

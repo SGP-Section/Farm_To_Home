@@ -4,16 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login_CreateAcc_Section.Login_Page"
-    android:backgroundTint="#A6FFFFFF"
-    android:backgroundTintMode="multiply"
-    android:orientation="vertical"
-    android:background="@drawable/login_background">
-<!--Hello Its Trial 3-->
+    android:orientation="vertical">
+    <!--Hello Its Trial 3-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
         android:gravity="center"
+        android:paddingVertical="100dp"
         android:layout_alignParentBottom="true"
         android:orientation="vertical">
 
@@ -22,9 +20,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/linearlayout"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="21dp"
-            android:layout_marginStart="50dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="30dp"
             android:fontFamily="@font/coustard"
             android:text="Login"
             android:textAlignment="center"
@@ -45,7 +42,7 @@
                 android:id="@+id/spinner"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
-                android:gravity="right"
+                android:gravity="center"
                 android:textAlignment="gravity"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="5dp"
@@ -71,10 +68,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="150dp"
             android:background="@drawable/normal_btn_format"
             android:fontFamily="@font/lato"
-            android:padding="10dp"
+            android:padding="20dp"
             android:text="Send OTP"
             android:textAllCaps="false"
             android:textSize="35dp" />
