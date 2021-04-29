@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="10dp"
-            android:text="Mobile:  "
+            android:hint="Mobile"
             android:textColor="@color/Main_FontColor"
 
             android:textSize="20dp" />
@@ -155,7 +155,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="50dp"
             android:background="@drawable/normal_btn_format"
-            android:padding="15dp"
+            android:padding="20dp"
             android:text="Edit Account Details"
             android:textAllCaps="false"
             android:textSize="20dp"
@@ -180,7 +180,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Edit_Details" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

@@ -5,5 +5,5 @@
     <stroke
         android:width="@dimen/shadowborderWidth"
         android:color="@color/Border" />
-    <corners android:radius="50dp" />
+    <corners android:radius="10dp" />
 </shape>

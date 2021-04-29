@@ -13,7 +13,7 @@
         android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
         android:text="BUY"
-        android:fontFamily="@font/coustard"
+        android:fontFamily="@font/lato"
         android:textColor="@color/BuyerTextColour"
         android:textSize="40sp"
         android:textStyle="bold"

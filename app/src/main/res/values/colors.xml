@@ -2,7 +2,7 @@
 <resources>
     <color name="ic_newlogo_background">#FFFFFF</color>
 
-    <color name="colorPrimary">#0E9164</color>
+    <color name="colorPrimary">#A5E658</color>
     <color name="ButtonBackground">#8BC34A</color>
     <color name="colorTextBackground">#CEFFFAE8</color>
     <color name="BuyerTextColour">#487025</color>

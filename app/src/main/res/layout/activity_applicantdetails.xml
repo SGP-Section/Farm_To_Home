@@ -3,13 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background"
-    android:backgroundTint="#A6FFFFFF"
-    android:backgroundTintMode="multiply"
     android:orientation="vertical"
-
     tools:context=".Login_CreateAcc_Section.ApplicantDetails">
-
+<!--    android:background="@drawable/login_background"
+    android:backgroundTint="#A6FFFFFF"
+    android:backgroundTintMode="multiply"-->
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
@@ -24,7 +22,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:background="@android:color/white"
-        android:fontFamily="@font/coustard"
+        android:fontFamily="@font/lato"
         android:gravity="center_horizontal"
         android:text="Create Account"
         android:textColor="@color/BuyerTextColour"
@@ -49,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:fontFamily="@font/coustard"
+            android:fontFamily="@font/lato"
             android:paddingLeft="30dp"
             android:text="Name:"
             android:textColor="#2E2D2D"
@@ -73,7 +71,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
-            android:fontFamily="@font/coustard"
+            android:fontFamily="@font/lato"
             android:paddingLeft="30dp"
             android:text="Date Of Birth:"
 
@@ -99,7 +97,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
-            android:fontFamily="@font/coustard"
+            android:fontFamily="@font/lato"
             android:paddingLeft="30dp"
             android:text="Adharcard Number:"
             android:textColor="#2E2D2D"
@@ -112,7 +110,7 @@
             android:layout_height="36dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/search_bar"
-            android:hint="Enter Adharcard Number "
+            android:hint="Enter AadharCard Number "
             android:inputType="number"
             android:paddingLeft="20dp"
             android:textColorHint="#7A706E" />
@@ -123,7 +121,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
-            android:fontFamily="@font/coustard"
+            android:fontFamily="@font/lato"
             android:paddingLeft="30dp"
             android:text="Preferred Area:"
             android:textColor="#2E2D2D"
@@ -149,7 +147,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
-            android:fontFamily="@font/coustard"
+            android:fontFamily="@font/lato"
             android:paddingLeft="30dp"
             android:text="Residing Area:"
             android:textColor="#2E2D2D"
@@ -177,11 +175,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:background="@drawable/normal_btn_format"
-        android:layout_marginBottom="88dp"
-        android:fontFamily="@font/coustard"
-        android:padding="10dp"
+        android:fontFamily="@font/lato"
+        android:padding="20dp"
         android:text="Next"
         android:textAlignment="center"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textSize="25sp" />
 </LinearLayout>

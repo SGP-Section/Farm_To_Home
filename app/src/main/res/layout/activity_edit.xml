@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:fontFamily="@font/coustard"
+        android:fontFamily="@font/lato"
         android:text="Edit Account Details"
         android:textAlignment="center"
         android:textColor="@color/BuyerTextColour"

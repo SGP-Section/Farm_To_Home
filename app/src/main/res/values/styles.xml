@@ -5,12 +5,17 @@
         <item name="colorPrimary">#B8EC7E</item>
         <item name="colorPrimaryDark">#5C7C37</item>
         <item name="colorAccent">#000000</item>
+        <item name="android:fontFamily">@font/lato</item>
+
     </style>
+
     <style name="AppCompat_Custom" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#B8EC7E</item>
         <item name="colorPrimaryDark">#354720</item>
         <item name="colorAccent">#000000</item>
         <item name="borderWidth">2dp</item>
+        <item name="android:fontFamily">@font/lato</item>
+
     </style>
 </resources>
