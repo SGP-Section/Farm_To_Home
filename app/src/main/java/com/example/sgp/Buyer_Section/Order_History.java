@@ -37,7 +37,7 @@ public class Order_History extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order__history);
+        setContentView(R.layout.activity_order_history);
         getSupportActionBar().setTitle("Order History");
 
 

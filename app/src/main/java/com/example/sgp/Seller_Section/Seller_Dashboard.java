@@ -16,13 +16,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sgp.Adapters.Database_Class;
 import com.example.sgp.Buyer_Section.Buyer_Dashboard;
-import com.example.sgp.OptionMenu.ContactUs;
 import com.example.sgp.Dashboard;
-import com.example.sgp.OptionMenu.Feedback;
 import com.example.sgp.MainActivity;
 import com.example.sgp.OptionMenu.AccountActivity;
-import com.example.sgp.R;
+import com.example.sgp.OptionMenu.ContactUs;
+import com.example.sgp.OptionMenu.Feedback;
 import com.example.sgp.QRcode.qrCodeReader;
+import com.example.sgp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -121,8 +121,8 @@ public class Seller_Dashboard extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         int M = Integer.parseInt(snapshot.getValue().toString());
-                        if (M == 1)
-                            M++;
+//                        if (M == 0)
+//                            M++;
                         sold_PgBar.setMax(M);
                         undel_PgBar.setMax(M);
                         Log.d("Tag", M + ":" + snapshot.getKey());
@@ -139,7 +139,7 @@ public class Seller_Dashboard extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         int counter = 0;
-                        float KG = 0f, Total = (float) sold_PgBar.getMax(), per = 0;
+                        float KG = 0f, Total = sold_PgBar.getMax(), per = 0;
                         for (DataSnapshot D : dataSnapshot.getChildren()) {
                             Database_Class Obj = D.getValue(Database_Class.class);
                             KG += Float.parseFloat(Obj.mWeightValue);
@@ -150,8 +150,9 @@ public class Seller_Dashboard extends AppCompatActivity {
                         sold_PgBar.setProgress(counter);
                         if (counter == 0)
                             per = 0f;
-                        else
-                            per = (counter * 100.00f) / Total;
+                        else {
+                            per = (counter * 100) / 100;
+                        }
                         Sold_per.setText("(" + String.format("%6.2f", per) + "%)");
                         Sold_kg.setText(String.format("%6.2f", KG));
 
