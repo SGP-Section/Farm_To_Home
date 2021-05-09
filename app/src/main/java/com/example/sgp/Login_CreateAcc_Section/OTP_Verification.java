@@ -176,7 +176,8 @@ public class OTP_Verification extends AppCompatActivity {
 
 
                         }else{
-                            Toast.makeText(OTP_Verification.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(OTP_Verification.this, "Try Again", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(OTP_Verification.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
                 });

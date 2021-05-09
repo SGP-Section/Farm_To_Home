@@ -1,8 +1,5 @@
 package com.example.sgp.OptionMenu;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,11 +8,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.sgp.Dashboard;
 import com.example.sgp.Login_CreateAcc_Section.Login_Page;
-import com.example.sgp.MainActivity;
 import com.example.sgp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,21 +30,24 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class AccountActivity extends AppCompatActivity {
     String MobileNo = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
 
-    private TextView txtNAme,txtPreArea,txtResArea,txtDob,txtUserName,txtMobile;
-    private Button button_Edit,button_del;
+    private TextView txtNAme, txtPreArea, txtResArea, txtDob, txtUserName, txtMobile, txtAadhar;
+    private ImageButton button_Edit, button_del;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
-        txtMobile=findViewById(R.id.MobileNo);
+        txtMobile = findViewById(R.id.MobileNo);
         txtDob = findViewById(R.id.txt_EditDOB);
         txtNAme = findViewById(R.id.txt_EditName);
+        txtAadhar = findViewById(R.id.txt_AadharC);
         txtPreArea = findViewById(R.id.txt_EditPreferredArea);
         txtResArea = findViewById(R.id.txt_editResidingArea);
         txtUserName = findViewById(R.id.txt_user);
         button_del=findViewById(R.id.btn_delete_acc);
         button_Edit = findViewById(R.id.btn_Edit_Details);
+
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         final DocumentReference documentReference = db.collection("DATA").document(MobileNo);
@@ -52,14 +56,16 @@ public class AccountActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if(documentSnapshot.exists()){
+                        if(documentSnapshot.exists()) {
                             txtDob.setText(documentSnapshot.getString("dob"));
                             txtNAme.setText(documentSnapshot.getString("name"));
+                            txtAadhar.setText(documentSnapshot.getString("AadharNumber"));
                             txtPreArea.setText(documentSnapshot.getString("Residing Area"));
                             txtResArea.setText(documentSnapshot.getString("Residing Area"));
-                            String userNAme = "Hello , "+ documentSnapshot.getString("name");
+                            String userNAme = "Hello , " + documentSnapshot.getString("name");
                             txtUserName.setText(userNAme);
-                            txtMobile.append(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber());
+                            String phno = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber().substring(2);
+                            txtMobile.setText("+91 " + phno);
 
                         }
                         else{
@@ -122,5 +128,11 @@ public class AccountActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this, Dashboard.class));
     }
 }

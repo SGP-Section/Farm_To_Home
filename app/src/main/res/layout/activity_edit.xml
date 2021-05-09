@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context=".OptionMenu.EditActivity">
 
@@ -27,29 +26,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:paddingHorizontal="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal"
-            android:paddingLeft="10dp">
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name : "
                 android:textColor="@color/Sub_FontColor"
-            android:textSize="20dp"/>
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/edt_EditName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Name"
                 android:textColor="@color/Sub_FontColor"
-            android:textSize="20dp"/>
+                android:textSize="20dp" />
 
         </LinearLayout>
 
@@ -57,24 +55,46 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginTop="10dp">
 
-            android:paddingLeft="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aadhar Number : "
+                android:textColor="@color/Sub_FontColor"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/edt_AadharEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="XXXX XXXX XXXX"
+                android:textColor="@color/Sub_FontColor"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Date Of Birth : "
                 android:textColor="@color/Sub_FontColor"
-            android:textSize="20dp"/>
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/edt_EditDOB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="date"
-                android:text="DOB"
+                android:text="DD/MM/YYYY"
                 android:textColor="@color/Sub_FontColor"
-            android:textSize="20dp"/>
+                android:textSize="20dp" />
 
         </LinearLayout>
 
@@ -82,23 +102,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-
-            android:paddingLeft="10dp">
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Preferred Area : "
                 android:textColor="@color/Sub_FontColor"
-            android:textSize="20dp"/>
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/edt_EditPreferredArea"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Area"
                 android:textColor="@color/Sub_FontColor"
-            android:textSize="20dp"/>
+                android:textSize="20dp" />
 
         </LinearLayout>
 
@@ -106,34 +125,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingLeft="10dp">
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Residing Area : "
                 android:textColor="@color/Sub_FontColor"
-            android:textSize="20dp"/>
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/edt_editResidingArea"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Area"
                 android:textColor="@color/Sub_FontColor"
-            android:textSize="20dp"/>
+                android:textSize="20dp" />
 
         </LinearLayout>
     </LinearLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/btn_Edit_Details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_done_24"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="80dp"
-        android:padding="20dp"
-        android:background="@drawable/normal_btn_format"
-        android:text="update"
-        android:textSize="25dp" />
+        android:layout_marginTop="70dp"
+        android:background="@drawable/done_button"
+        android:padding="10dp" />
 </LinearLayout>

@@ -3,14 +3,14 @@ package com.example.sgp.OptionMenu;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.sgp.Dashboard;
+import com.example.sgp.Login_CreateAcc_Section.Verhoeff;
 import com.example.sgp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,7 +27,7 @@ public class EditActivity extends AppCompatActivity {
     boolean ret = true;
     DocumentReference dr;
     String phone;
-    private EditText edtName, edtDob, edtPreArea, edtResArea;
+    private EditText edtName, edtAadhar, edtDob, edtPreArea, edtResArea;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +38,12 @@ public class EditActivity extends AppCompatActivity {
 
         edtDob = findViewById(R.id.edt_EditDOB);
         edtName = findViewById(R.id.edt_EditName);
+        edtAadhar = findViewById(R.id.edt_AadharEdit);
         edtPreArea = findViewById(R.id.edt_EditPreferredArea);
         edtResArea = findViewById(R.id.edt_editResidingArea);
-        Button btnUpdate = findViewById(R.id.btn_Edit_Details);
 
+        ImageButton btnUpdate = findViewById(R.id.btn_Edit_Details);
+// add aadhar card
 
         FirebaseFirestore.getInstance()
                 .collection("DATA").document(phone).get()
@@ -52,11 +54,12 @@ public class EditActivity extends AppCompatActivity {
 
                             edtDob.setText(documentSnapshot.getString("dob"));
                             edtName.setText(documentSnapshot.getString("name"));
-                            edtPreArea.setText(documentSnapshot.getString("Residing Area"));
+                            edtAadhar.setText(documentSnapshot.getString("AadharNumber"));
+                            edtPreArea.setText(documentSnapshot.getString("Preferred Area"));
                             edtResArea.setText(documentSnapshot.getString("Residing Area"));
 
                         } else {
-                            Toast.makeText(EditActivity.this, "Document does not exist!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EditActivity.this, "Details does not exist!!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -69,18 +72,27 @@ public class EditActivity extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String aadharcardNumber = edtAadhar.getText().toString().trim();
 
                 HashMap<String, Object> data = new HashMap<>();
                 data.put("name", edtName.getText().toString());
                 data.put("dob", edtDob.getText().toString());
+                data.put("AadharNumber", aadharcardNumber);
                 data.put("Residing Area", edtResArea.getText().toString());
                 data.put("Preferred Area", edtPreArea.getText().toString());
 
 
-                boolean C1 = SaveToFirebase(data, phone);
-                if (C1) {
+                if (Verhoeff.validateVerhoeff(aadharcardNumber)) {
+                    SaveToFirebase(data, phone);
+                    Toast.makeText(EditActivity.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
                     finish();
-                    startActivity(new Intent(EditActivity.this, Dashboard.class));
+                    startActivity(new Intent(EditActivity.this, AccountActivity.class));
+                } else {
+                    edtAadhar.setError("Enter Valid AadharCard Number");
+                    edtAadhar.requestFocus();
+
+                    aadharcardNumber = "";
+                    return;
                 }
 
             }
@@ -95,7 +107,6 @@ public class EditActivity extends AppCompatActivity {
                 .addOnSuccessListener(EditActivity.this, new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(EditActivity.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
                         ret = false;
 
                     }
@@ -103,7 +114,7 @@ public class EditActivity extends AppCompatActivity {
                 .addOnFailureListener(EditActivity.this, new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(EditActivity.this, "Account Creation Fail:" + e.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditActivity.this, "Account Updation Fail:\n" + e.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
         return ret;

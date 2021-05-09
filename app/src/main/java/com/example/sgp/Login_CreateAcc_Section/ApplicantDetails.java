@@ -30,7 +30,7 @@ public class ApplicantDetails extends AppCompatActivity {
 
         final EditText name_e=findViewById(R.id.name_create);
         final EditText dob_e = findViewById(R.id.date_create);
-        final EditText AdharNumber = findViewById(R.id.AdharcardNumber);
+        final EditText AadharNumber = findViewById(R.id.AdharcardNumber);
         final EditText res_area_e = findViewById(R.id.res_area_create);
         final EditText pref_area_e=findViewById(R.id.pref_area_create);
 
@@ -46,7 +46,7 @@ public class ApplicantDetails extends AppCompatActivity {
 
                 String Name = name_e.getText().toString();
                 String dob = dob_e.getText().toString();
-                String adharcardNumber = AdharNumber.getText().toString();
+                String aadharcardNumber = AadharNumber.getText().toString().trim();
 
                 String resArea = res_area_e.getText().toString();
                 String prefArea = pref_area_e.getText().toString();
@@ -55,22 +55,24 @@ public class ApplicantDetails extends AppCompatActivity {
                 Map<String, Object> data = new HashMap<>();
                 data.put("name", Name);
                 data.put("dob", dob);
-                data.put("AdharNumber", adharcardNumber);
+                data.put("AadharNumber", aadharcardNumber);
                 data.put("Residing Area", resArea);
                 data.put("Preferred Area", prefArea);
                 InitializeRealTime(mobileNumber);
 
                 boolean C1 = SaveToFirebase(data, "DATA", mobileNumber);
-                boolean C2 = Verhoeff.validateVerhoeff(adharcardNumber);
+                boolean C2 = Verhoeff.validateVerhoeff(aadharcardNumber);
 
-                String ss = String.valueOf(C2);
-
-                if (C1 && C2 && adharcardNumber != "") {
+                if (C1 && C2) {
                     finish();
                     startActivity(new Intent(ApplicantDetails.this, Dashboard.class));
                 } else {
-                    Toast.makeText(ApplicantDetails.this, "Please Enter Valid Aadharcard Number", Toast.LENGTH_SHORT).show();
+                    AadharNumber.setError("Enter Valid AadharCard Number");
+                    AadharNumber.requestFocus();
+                    aadharcardNumber = "";
+                    return;
                 }
+//                    Toast.makeText(ApplicantDetails.this, "Please Enter Valid Aadharcard Number", Toast.LENGTH_SHORT).show();
                 /*if(passwordCreate.compareTo(confirm_password)==0) {
                     boolean C1 = SaveToFirebase(data, "DATA", mobileCreate);
                     boolean C2 = SaveToFirebase(data, "buyer", mobileCreate);

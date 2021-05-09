@@ -58,6 +58,8 @@ public class Verhoeff {
      */
     public static boolean validateVerhoeff(String num) {
 
+        if (num.isEmpty())
+            return false;
         int c = 0;
         int[] myArray = stringToReversedIntArray(num);
 

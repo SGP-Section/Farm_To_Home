@@ -15,13 +15,7 @@
         android:roundIcon="@drawable/ic_new_mainlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme_Custom">
-        <activity android:name=".Buyer_Section.Order_History">
-            <!--            <intent-filter>-->
-            <!--                <action android:name="android.intent.action.MAIN" />-->
-
-            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-            <!--            </intent-filter>-->
-        </activity>
+        <activity android:name=".Buyer_Section.Order_History" />
         <activity android:name=".QRcode.qrCodeReader" />
         <activity
             android:name=".OptionMenu.Feedback"
