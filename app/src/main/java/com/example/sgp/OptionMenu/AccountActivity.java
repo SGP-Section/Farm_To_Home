@@ -16,7 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sgp.Dashboard;
-import com.example.sgp.Login_CreateAcc_Section.Login_Page;
+import com.example.sgp.MainActivity;
 import com.example.sgp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -64,7 +64,7 @@ public class AccountActivity extends AppCompatActivity {
                             txtResArea.setText(documentSnapshot.getString("Residing Area"));
                             String userNAme = "Hello , " + documentSnapshot.getString("name");
                             txtUserName.setText(userNAme);
-                            String phno = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber().substring(2);
+                            String phno = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber().substring(3);
                             txtMobile.setText("+91 " + phno);
 
                         }
@@ -107,13 +107,17 @@ public class AccountActivity extends AppCompatActivity {
                 confirm.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        FirebaseFirestore.getInstance().document("DATA/"+MobileNo).delete();
-                        FirebaseFirestore.getInstance().document("Feedback/"+MobileNo).delete();
+                        FirebaseFirestore.getInstance().document("DATA/" + MobileNo).delete();
+                        FirebaseFirestore.getInstance().document("Feedback/" + MobileNo).delete();
                         FirebaseDatabase.getInstance().getReference("Data/" + MobileNo).removeValue();
                         FirebaseAuth.getInstance().getCurrentUser().delete();
-                        finish();
-                        startActivity(new Intent(AccountActivity.this, Login_Page.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
+                        FirebaseAuth.getInstance().signOut();
+                        finishAffinity();
                         Toast.makeText(AccountActivity.this, "Account Deleted", Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(AccountActivity.this, MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
 
 
                     }

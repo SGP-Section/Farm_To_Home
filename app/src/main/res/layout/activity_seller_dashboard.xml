@@ -33,7 +33,7 @@
         android:layout_marginTop="2dp"
         android:background="@color/RecyclerBKG"
         android:fontFamily="@font/lato"
-        android:paddingStart="10dp"
+        android:paddingStart="20dp"
         android:text="Sold"
         android:textColor="@color/Main_FontColor"
         android:textSize="30sp" />
@@ -118,7 +118,7 @@
         android:background="@color/RecyclerBKG"
         android:fontFamily="@font/lato"
         android:gravity="left"
-        android:paddingStart="10dp"
+        android:paddingStart="20dp"
         android:text="Undelivered"
         android:textColor="@color/Main_FontColor"
         android:textSize="30dp" />
@@ -205,7 +205,7 @@
         android:background="@color/RecyclerBKG"
         android:fontFamily="@font/lato"
         android:gravity="left"
-        android:paddingStart="10dp"
+        android:paddingStart="20dp"
         android:text="Cancelled"
         android:textColor="@color/Main_FontColor"
         android:textSize="30dp" />

@@ -7,6 +7,8 @@
     <dimen name="qrsize">100dp</dimen>
     <dimen name="btn_padding">20dp</dimen>
 
+    <dimen name="ic_actionBar">28dp</dimen>
+
     <string name="qr_code">qr_code</string>
     <string name="enter_your_info">Enter your info</string>
     <string name="generate_qr_code">Generate QR Code</string>
@@ -14,5 +16,6 @@
     <string name="toggle_flash">Toggle Flash</string>
     <string name="action_settings">Settings</string>
     <string name="scanned_data">Scanned Data</string>
+
 
 </resources>

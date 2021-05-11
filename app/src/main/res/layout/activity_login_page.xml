@@ -17,7 +17,6 @@
         android:layout_marginBottom="30dp"
         android:fontFamily="@font/lato_black_italic"
         android:text="Login"
-        android:textAlignment="center"
         android:textColor="#05950B"
         android:textSize="45sp"
         android:textStyle="bold" />
@@ -28,24 +27,26 @@
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
+
+        android:paddingHorizontal="30dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp">
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="30dp"
+            android:layout_height="match_parent"
             android:layout_marginEnd="5dp"
-            android:fontFamily="@font/lato_italic"
+            android:layout_weight="1"
             android:background="@drawable/login_code"
-            android:gravity="right"
-            android:textAlignment="gravity" />
+            android:fontFamily="@font/lato_italic"
+            android:paddingLeft="10dp" />
 
         <EditText
             android:id="@+id/edt_mobile"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
             android:background="@drawable/login_number"
             android:digits="0123456789"
             android:fontFamily="@font/lato_italic"
@@ -61,13 +62,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/normal_btn_format"
         android:fontFamily="@font/lato"
         android:padding="20dp"
         android:text="Send OTP"
         android:textAllCaps="false"
-        android:textSize="35dp" />
+        android:textSize="25dp" />
 
 
 </LinearLayout>

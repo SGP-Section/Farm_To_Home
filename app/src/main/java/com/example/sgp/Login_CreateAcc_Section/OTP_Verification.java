@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -38,6 +39,7 @@ public class OTP_Verification extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressBar progressBar;
     private EditText editText;
+    private TextView enter_phnumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,8 @@ public class OTP_Verification extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressbar);
         editText = findViewById(R.id.edt_otp);
+        enter_phnumber = findViewById(R.id.enter_Number);
+        enter_phnumber.append(phoneNumber.substring(3));
 
 
         sendVerificationCode(phoneNumber);

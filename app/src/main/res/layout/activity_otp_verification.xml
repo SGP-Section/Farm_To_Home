@@ -15,10 +15,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/lato_black_italic"
-        android:text="Wait a minute...."
+        android:text="Enter OTP"
         android:textColor="#05950B"
         android:textSize="35dp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/enter_Number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/BLACK"
+        android:fontFamily="@font/lato_italic"
+        android:text="OTP is Send at +91 " />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,14 +38,14 @@
 
         <EditText
             android:id="@+id/edt_otp"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:paddingVertical="10dp"
             android:paddingHorizontal="20dp"
             android:background="@drawable/rounding"
-            android:text="000000"
+            android:hint="000000"
             android:inputType="phone"
-            android:letterSpacing="0.3"
+            android:letterSpacing="0.4"
             android:textAlignment="center"
             android:textSize="25dp"
             android:layout_marginRight="10dp" />
@@ -47,6 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
+
 
     <Button
         android:id="@+id/buttonSignIn"
